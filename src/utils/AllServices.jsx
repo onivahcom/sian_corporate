@@ -2,20 +2,120 @@ import { useState } from 'react';
 import { Box, Typography, Grid, Button, Card, CardMedia, CardContent } from '@mui/material';
 import { ArrowBack, ArrowDropDown, ArrowDropUp, ArrowUpward } from '@mui/icons-material';
 
+import DesignServicesIcon from '@mui/icons-material/DesignServices';
+import CodeIcon from '@mui/icons-material/Code';
+import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
+import CampaignIcon from '@mui/icons-material/Campaign'; // Digital Marketing
+import CloudIcon from '@mui/icons-material/Cloud'; // Cloud Solutions
+import SecurityIcon from '@mui/icons-material/Security'; // Cybersecurity
+import SpeedIcon from '@mui/icons-material/Speed'; // Performance Optimization
+import IntegrationInstructionsIcon from '@mui/icons-material/IntegrationInstructions'; // API Integration
+import SmartToyIcon from '@mui/icons-material/SmartToy'; // AI/Chatbot
+import InsightsIcon from '@mui/icons-material/Insights'; // Analytics & SEO
+
+
+
 const allServices = [
-    { title: 'AI Solutions', image: 'https://img.freepik.com/free-photo/futuristic-robot-working-digital-interface_23-2151966679.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740' },
-    { title: 'Cloud Consulting', image: 'https://img.freepik.com/premium-photo/digital-finance-business-models-using-data-analytics-technology-graph-perceptive-insights_1356430-5311.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740' },
-    { title: 'Cybersecurity', image: 'https://img.freepik.com/free-photo/futurism-perspective-digital-nomads-lifestyle_23-2151252420.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740' },
-    { title: 'IT Infrastructure', image: 'https://img.freepik.com/free-photo/cyber-security-expert-working-with-technology-neon-lights_23-2151645561.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740' },
-    { title: 'IoT Solutions', image: 'https://img.freepik.com/free-photo/futuristic-business-scene-with-ultra-modern-ambiance_23-2151003761.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740' },
-    { title: 'Penetration Testing', image: 'https://img.freepik.com/premium-photo/man-is-writing-white-board-with-checklist-it_1187092-95968.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740' },
-    { title: 'Data Engineering', image: 'https://img.freepik.com/free-photo/futurism-perspective-digital-nomads-lifestyle_23-2151252464.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740.' },
-    { title: 'Web Applications', image: 'https://img.freepik.com/premium-photo/man-using-laptop-with-product-catalog-interface-home-office_819052-42447.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740' },
-    { title: 'Cloud Storage', image: 'https://img.freepik.com/free-photo/technology-integrated-everyday-life_23-2151887047.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740' },
-    { title: 'Business Intelligence', image: 'https://img.freepik.com/free-photo/portrait-indigenous-person-integrated-into-modern-life_23-2151102511.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740' },
-    { title: 'DevOps & CI/CD', image: 'https://img.freepik.com/free-photo/view-male-engineer-work-engineers-day-celebration_23-2151615153.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740' },
-    { title: 'Automation Tools', image: 'https://img.freepik.com/free-photo/man-hanging-out-with-robot_23-2151112223.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740' },
+    {
+        id: 1,
+        title: 'Custom Software Development',
+        icon: <DesignServicesIcon fontSize="medium" color="primary" />,
+        image: 'https://img.freepik.com/free-photo/futuristic-robot-working-digital-interface_23-2151966679.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740',
+    },
+    {
+        id: 2,
+        title: 'Web Application Development',
+        icon: <CodeIcon fontSize="medium" color="primary" />,
+        image: 'https://img.freepik.com/premium-photo/digital-finance-business-models-using-data-analytics-technology-graph-perceptive-insights_1356430-5311.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740',
+    },
+    {
+        id: 3,
+        title: 'Mobile App Development',
+        icon: <PhoneIphoneIcon fontSize="medium" color="primary" />,
+        image: 'https://img.freepik.com/free-photo/futuristic-robot-working-digital-interface_23-2151966679.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740',
+        // No match found in allServices
+    },
+    {
+        id: 4,
+        title: 'Software Consulting',
+        icon: <CampaignIcon fontSize="medium" color="primary" />,
+        image: 'https://img.freepik.com/free-photo/futuristic-robot-working-digital-interface_23-2151966679.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740',
+        // No match found
+    },
+    {
+        id: 5,
+        title: 'Cloud Solutions & Migration',
+        icon: <CloudIcon fontSize="medium" color="primary" />,
+        image: 'https://img.freepik.com/free-photo/technology-integrated-everyday-life_23-2151887047.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740',
+    },
+    {
+        id: 6,
+        title: 'Software Integration',
+        icon: <SecurityIcon fontSize="medium" color="primary" />,
+        image: 'https://img.freepik.com/free-photo/futuristic-robot-working-digital-interface_23-2151966679.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740',
+        // No match found
+    },
+    {
+        id: 7,
+        title: 'API Development & Integration',
+        icon: <SpeedIcon fontSize="medium" color="primary" />,
+        image: 'https://img.freepik.com/free-photo/futuristic-robot-working-digital-interface_23-2151966679.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740',
+        // No match found
+    },
+    {
+        id: 8,
+        title: 'UI/UX Design',
+        icon: <IntegrationInstructionsIcon fontSize="medium" color="primary" />,
+        image: 'https://img.freepik.com/free-photo/futuristic-robot-working-digital-interface_23-2151966679.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740',
+        // No match found
+    },
+    {
+        id: 9,
+        title: 'QA & Testing Services',
+        icon: <SmartToyIcon fontSize="medium" color="primary" />,
+        image: 'https://img.freepik.com/free-photo/futuristic-robot-working-digital-interface_23-2151966679.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740',
+        // No match found
+    },
+    {
+        id: 10,
+        title: 'Maintenance & Support',
+        icon: <InsightsIcon fontSize="medium" color="primary" />,
+        image: 'https://img.freepik.com/free-photo/futuristic-robot-working-digital-interface_23-2151966679.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740',
+        // No match found
+    },
+    {
+        id: 11,
+        title: 'Enterprise Software Solutions',
+        icon: <DesignServicesIcon fontSize="medium" color="primary" />,
+        image: 'https://img.freepik.com/free-photo/futuristic-robot-working-digital-interface_23-2151966679.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740',
+        // No match found
+    },
+    {
+        id: 12,
+        title: 'DevOps & Automation',
+        icon: <CodeIcon fontSize="medium" color="primary" />,
+        image: 'https://img.freepik.com/free-photo/view-male-engineer-work-engineers-day-celebration_23-2151615153.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740',
+    },
+    {
+        id: 13,
+        title: 'Data Analytics & Business Intelligence',
+        icon: <PhoneIphoneIcon fontSize="medium" color="primary" />,
+        image: 'https://img.freepik.com/free-photo/portrait-indigenous-person-integrated-into-modern-life_23-2151102511.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740',
+    },
+    {
+        id: 14,
+        title: 'Artificial Intelligence (AI) Technologies',
+        icon: <CampaignIcon fontSize="medium" color="primary" />,
+        image: 'https://img.freepik.com/free-photo/man-hanging-out-with-robot_23-2151112223.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740',
+    },
+    {
+        id: 15,
+        title: 'Cybersecurity Solutions',
+        icon: <CloudIcon fontSize="medium" color="primary" />,
+        image: 'https://img.freepik.com/free-photo/futurism-perspective-digital-nomads-lifestyle_23-2151252420.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740',
+    },
 ];
+
 
 export default function AllServices() {
     const [showAll, setShowAll] = useState(false);

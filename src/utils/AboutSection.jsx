@@ -10,6 +10,8 @@ export default function AboutSection() {
                 backgroundColor: '#fff',
                 color: 'black',
                 width: '100%',
+                // borderRadius: 3,
+                placeSelf: "center"
             }}
         >
             <Grid

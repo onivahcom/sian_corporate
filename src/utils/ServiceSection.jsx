@@ -10,33 +10,50 @@ import {
     Stack,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { ArrowForward, ArrowRight, ArrowRightAlt, } from '@mui/icons-material';
+import { ArrowForward, ArrowRight, ArrowRightAlt, Computer, ImportExport, LocalHospital, LocalHotel, PersonAdd, Work, } from '@mui/icons-material';
+import { NavLink } from "react-router-dom";
 
 
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import CodeIcon from '@mui/icons-material/Code';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import CampaignIcon from '@mui/icons-material/Campaign'; // Digital Marketing
-import CloudIcon from '@mui/icons-material/Cloud'; // Cloud Solutions
-import SecurityIcon from '@mui/icons-material/Security'; // Cybersecurity
-import SpeedIcon from '@mui/icons-material/Speed'; // Performance Optimization
-import IntegrationInstructionsIcon from '@mui/icons-material/IntegrationInstructions'; // API Integration
-import SmartToyIcon from '@mui/icons-material/SmartToy'; // AI/Chatbot
-import InsightsIcon from '@mui/icons-material/Insights'; // Analytics & SEO
 
 
 const services = [
-    { id: 1, title: 'UI/UX Design', icon: <DesignServicesIcon fontSize="medium" color="primary" /> },
-    { id: 2, title: 'Web Development', icon: <CodeIcon fontSize="medium" color="primary" /> },
-    { id: 3, title: 'Mobile Apps', icon: <PhoneIphoneIcon fontSize="medium" color="primary" /> },
-    { id: 4, title: 'Digital Marketing', icon: <CampaignIcon fontSize="medium" color="primary" /> },
-    { id: 5, title: 'Cloud Solutions', icon: <CloudIcon fontSize="medium" color="primary" /> },
-    { id: 6, title: 'Cybersecurity', icon: <SecurityIcon fontSize="medium" color="primary" /> },
-    { id: 7, title: 'Performance Optimization', icon: <SpeedIcon fontSize="medium" color="primary" /> },
-    { id: 8, title: 'API Integrations', icon: <IntegrationInstructionsIcon fontSize="medium" color="primary" /> },
-    { id: 9, title: 'AI Chatbots', icon: <SmartToyIcon fontSize="medium" color="primary" /> },
-    { id: 10, title: 'SEO & Analytics', icon: <InsightsIcon fontSize="medium" color="primary" /> },
+    {
+        id: 1,
+        title: 'IT Solutions',
+        slug: 'it-solutions',
+        icon: <Computer fontSize="medium" color="primary" />,
+    },
+
+    {
+        id: 2,
+        title: 'R&D and Training',
+        slug: 'R&D-and-Training',
+        icon: <Work fontSize="medium" color="primary" />,
+    },
+    {
+        id: 3,
+        title: 'Labour Supply Under Contract',
+        slug: 'labour-supply-under-contract',
+        icon: <PersonAdd fontSize="medium" color="primary" />,
+    },
+    {
+        id: 4,
+        title: 'Global Trading',
+        slug: 'global-trading',
+        icon: <ImportExport fontSize="medium" color="primary" />,
+    },
+    {
+        id: 5,
+        title: 'Hospitality Services',
+        slug: 'hospitality-services',
+        icon: <LocalHospital fontSize="medium" color="primary" />,
+    },
 ];
+
 
 // Styled ListItem with hover effect
 const StyledListItem = styled(ListItem)(({ theme }) => ({
@@ -85,25 +102,26 @@ export default function ServiceSection() {
                 spacing={{ xs: 2, md: 2 }}
                 columns={{ xs: 12, sm: 12, md: 12 }}
                 alignItems="center"
-                justifyContent="center"
+            // justifyContent="center"
             >
-                {services.map(({ id, title, icon }) => (
-                    <Grid key={id} size={{ xs: 12, sm: 6 }}>
+                {services.map(({ id, title, icon, slug }) => (
+                    <Grid key={id} size={{ xs: 12, sm: 6 }} >
                         <List disablePadding sx={{ borderBottom: "2px solid #eee" }}>
-                            <StyledListItem>
-                                <ListItemIcon sx={{ minWidth: 48 }}>{icon}</ListItemIcon>
-                                <ListItemText
-                                    primary={
-                                        <Typography sx={{ fontWeight: 600, fontSize: '1rem' }}>
-                                            {title}
-                                        </Typography>
-                                    }
-                                />
-                                <HoverContent className="hover-content" direction="row">
-
-                                    <ArrowForward />
-                                </HoverContent>
-                            </StyledListItem>
+                            <NavLink to={`/services/${slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                <StyledListItem>
+                                    <ListItemIcon sx={{ minWidth: 48 }}>{icon}</ListItemIcon>
+                                    <ListItemText
+                                        primary={
+                                            <Typography sx={{ fontWeight: 600, fontSize: '1rem', mb: 1 }}>
+                                                {title}
+                                            </Typography>
+                                        }
+                                    />
+                                    <HoverContent className="hover-content" direction="row">
+                                        <ArrowForward />
+                                    </HoverContent>
+                                </StyledListItem>
+                            </NavLink>
                         </List>
                     </Grid>
                 ))}

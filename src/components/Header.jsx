@@ -21,23 +21,18 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Close } from '@mui/icons-material';
+import { NavLink } from 'react-router-dom';
 
 const navItems = [
     { label: 'Home', href: '/' },
-    // { label: 'Import & Export', href: '/import-export' },
+    // { label: 'Global Trading', href: '/import-export' },
     { label: 'About Us', href: '/about' },
-    { label: 'Services', href: '#' },
-    { label: 'Why Us', href: '/it-solutions' },
-    { label: 'Contact Us', href: '/contact' },
+    { label: 'Services', href: '/services' },
+    { label: 'Why Us', href: '/why-us' },
+    { label: 'Contact Us', href: '/contact-us' },
 ];
 
-const serviceItems = [
-    { label: 'Event Management', href: '/services/events' },
-    { label: 'Wedding Planning', href: '/services/weddings' },
-    { label: 'Corporate Services', href: '/services/corporate' },
-    { label: 'Venue Booking', href: '/services/venues' },
-    { label: 'Catering', href: '/services/catering' },
-];
+
 
 const Header = () => {
 
@@ -155,9 +150,9 @@ const Header = () => {
                         <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 3 }}>
                             {navItems.map((item) => (
                                 <Button
-
                                     key={item.label}
-                                    href={item.href}
+                                    component={NavLink}
+                                    to={item.href}
                                     sx={{
                                         fontSize: "0.9rem",
                                         color: 'white',
