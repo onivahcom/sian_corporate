@@ -174,7 +174,7 @@ const Header = () => {
                             onClick={handleDrawerToggle}
                             sx={{ display: { md: 'none' } }}
                         >
-                            <MenuIcon sx={{ color: "grey.700" }} />
+                            <MenuIcon sx={{ color: show && location.pathname !== '/' ? "white" : "black" }} />
                         </IconButton>
                     </Toolbar>
                 </AppBar>
