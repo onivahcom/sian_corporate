@@ -39,7 +39,10 @@ const LandingPage = () => {
 
             <Header />
             {/* <HeroSlider slides={slides} options={{ loop: false }} /> */}
-            <HeroSection2 />
+            <div className='p-2'>
+
+                <HeroSection2 />
+            </div>
             <AboutSection />
             <TransformingBusiness />
             <ServiceSection />

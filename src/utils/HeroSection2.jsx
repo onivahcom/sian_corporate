@@ -31,7 +31,7 @@ const HeroSection2 = () => {
     const isMobile = useMediaQuery(theme.breakpoints.down('md'))
 
     return (
-        <section className="relative w-full h-screen overflow-hidden p-2 ">
+        <section className="relative w-full h-screen overflow-hidden  rounded-xl">
 
             <Splide
                 options={{
@@ -52,7 +52,7 @@ const HeroSection2 = () => {
                             {/* BACKGROUND IMAGE */}
                             <img
                                 src={slide.image}
-                                className="absolute inset-0 w-full h-full object-cover blur-[6px] brightness-75 scale-110 rounded-2xl "
+                                className="absolute inset-0 w-full h-full object-cover blur-[6px] brightness-75 scale-110  "
                                 alt=""
                             />
 
