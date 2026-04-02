@@ -54,7 +54,7 @@ const Footer = () => {
                     {/* Column 1: Brand & Bio */}
                     <Grid size={{ xs: 12, md: 4 }}>
                         <Typography variant="h5" sx={{ fontWeight: "900", mb: 3, letterSpacing: "-1px" }}>
-                            SIAN<span style={{ color: colors.accentBlue }}> NextGen</span>
+                            SIAN NextGen<span style={{ color: colors.accentBlue }}> Technologies </span>
                         </Typography>
                         <Typography variant="body2" sx={{ color: colors.textMuted, lineHeight: 1.8, mb: 4 }}>
                             Innovating at the intersection of design and technology. We provide high-end full-stack solutions and AI-driven systems to help your corporate brand lead the digital era.
