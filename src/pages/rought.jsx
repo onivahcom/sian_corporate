@@ -135,6 +135,38 @@ const itemVariants = {
     }
 };
 
+// 1. Define the entrance behavior
+const containerVariants2 = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.15, // Delay between each card popping up
+            delayChildren: 0.2
+        }
+    }
+};
+
+const itemVariants2 = {
+    hidden: {
+        opacity: 0,
+        y: 60,   // Start below
+        scale: 0.9 // Start slightly smaller
+    },
+    visible: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: {
+            type: "spring",
+            stiffness: 100,
+            damping: 12
+        }
+    }
+};
+
+
+
 const App = () => {
 
     const navigate = useNavigate();
@@ -293,7 +325,7 @@ const App = () => {
                 >
                     <div className="inline-flex items-center gap-2 px-4 py-1.5  mt-0 md:mt-20 rounded-full border mb-8 bg-blue-50 border-blue-100 dark:bg-white/5 dark:border-white/10">
                         <Sparkles size={12} className="text-blue-600 dark:text-blue-400" />
-                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">Engineering NEXT-GEN Scalability</span>
+                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">Engineering <span className='font-extrabold'>NEXT-GEN</span>  Scalability</span>
                     </div>
 
                     <h1 className="text-6xl md:text-8xl 2xl:text-9xl font-black leading-[0.9] mb-8 tracking-[0.05em]">
@@ -302,6 +334,13 @@ const App = () => {
                             Limits.
                         </span>
                     </h1>
+
+                    {/* <h1 className="text-5xl md:text-6xl xl:text-6xl font-black leading-tight mb-6">
+                        Engineering <br />
+                        <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                            Next-Gen Scalability.
+                        </span>
+                    </h1> */}
                     <p className="text-xl md:text-2xl opacity-60 max-w-2xl mx-auto mb-12 leading-relaxed font-medium">
                         Architecting digital ecosystems that power the next generation of global business infrastructure.
                     </p>
@@ -322,7 +361,7 @@ const App = () => {
             </section>
 
 
-            <section id="about" className="py-24 px-6 bg-slate-50 dark:bg-[#020617] transition-colors duration-500 overflow-hidden">
+            <section id="about" className="py-15 md:py-30 px-6 bg-slate-50 dark:bg-[#020617] transition-colors duration-500 overflow-hidden">
                 <div className="max-w-6xl mx-auto">
 
                     {/* --- LAYER 1: THE MISSION --- */}
@@ -361,11 +400,11 @@ const App = () => {
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
                                 <div className="p-10 rounded-[2.5rem] bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-white/10 text-center shadow-xl shadow-blue-900/5 transition-all hover:scale-105 duration-500">
-                                    <p className=" text-4xl md:text-5xl font-black text-blue-600 mb-2 ">99.9%</p>
+                                    <p className=" text-4xl md:text-5xl font-black text-blue-600 dark:text-blue-300 mb-2 ">99.9%</p>
                                     <p className="text-[10px] font-bold uppercase tracking-widest opacity-50 text-black dark:text-white">Uptime Reliability</p>
                                 </div>
                                 <div className="p-10 rounded-[2.5rem] bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-white/10 text-center mt-12 shadow-xl shadow-blue-900/5 transition-all hover:scale-105 duration-500">
-                                    <p className="text-5xl font-black text-blue-600 mb-2 tracking-tighter">250+</p>
+                                    <p className="text-5xl font-black text-blue-600 dark:text-blue-300 mb-2 tracking-tighter">250+</p>
                                     <p className="text-[10px] font-bold uppercase tracking-widest opacity-50 text-black dark:text-white">Global Partners</p>
                                 </div>
                             </div>
@@ -394,15 +433,15 @@ const App = () => {
                             <motion.div
                                 key={idx}
                                 whileHover={{ y: -10 }}
-                                className="p-10 rounded-[2.5rem] border bg-white dark:bg-slate-900/20 border-slate-100 dark:border-slate-900 transition-all duration-500 group shadow-sm hover:shadow-2xl hover:shadow-blue-500/10"
+                                className="p-10 rounded-[2.5rem] border bg-white dark:bg-slate-600/20 border-slate-100 dark:border-slate-900 transition-all duration-500 group shadow-sm hover:shadow-2xl hover:shadow-blue-500/10"
                             >
-                                <div className="w-14 h-14 rounded-2xl bg-blue-600 text-white flex items-center justify-center mb-8 shadow-lg shadow-blue-600/30 group-hover:rotate-6 transition-transform">
+                                <div className="w-14 h-14 rounded-2xl bg-blue-100 dark:bg-blue-500/10 hover:bg-blue-600 text-blue-600 flex items-center justify-center mb-8 shadow-blue-600/30 group-hover:rotate-6 transition-transform">
                                     {pillar.icon}
                                 </div>
-                                <h4 className="text-xl font-black mb-4 text-slate-900 dark:text-white uppercase tracking-tighter">
+                                <h4 className="text-xl font-black mb-4 text-slate-900 dark:text-white uppercase">
                                     {pillar.t}
                                 </h4>
-                                <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
+                                <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">
                                     {pillar.d}
                                 </p>
                             </motion.div>
@@ -457,12 +496,19 @@ const App = () => {
                     <p className="max-w-xs text-sm opacity-50 font-medium">Delivering specialized engineering solutions across the full stack of modern technology.</p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <motion.div
+                    variants={containerVariants2}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, margin: "-100px" }} // Triggers slightly before the element is fully in view
+                    className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+                >
                     {services.map((s, i) => (
                         <motion.div
                             key={i}
+                            variants={itemVariants2}
                             whileHover={{ y: -10 }}
-                            transition={{ duration: 0.4, ease: "circOut" }}
+                            // transition={{ duration: 0.4, ease: "circOut" }}
                             className="group cursor-pointer relative rounded-[2.5rem] overflow-visible"
                             onClick={() => navigate(`/services/${s.slug}`)}
                         >
@@ -530,7 +576,7 @@ const App = () => {
                             </div>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </section>
 
             {/* --- THE PROCESS (Timeline) --- */}
