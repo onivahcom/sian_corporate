@@ -17,6 +17,7 @@ import Scroller from './components/Scroller'
 import Services from './pages/Services'
 import ServiceDetail from './pages/ServiceDetail'
 import SianNextGen from './pages/rought'
+import { blue } from '@mui/material/colors'
 
 const App = () => {
 
@@ -57,6 +58,8 @@ const App = () => {
             bottom: 20,
             right: 20,
             zIndex: 1000,
+            borderRadius: 2,
+            bgcolor: blue[700]
           }}
         >
           <ArrowUpward />
