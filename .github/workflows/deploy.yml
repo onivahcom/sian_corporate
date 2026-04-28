@@ -31,7 +31,7 @@ jobs:
 
       - name: Install Dependencies
         if: steps.cache-nodemodules.outputs.cache-hit != 'true'
-        run: npm ci
+        run: npm install
 
       - name: Build Project
         # Vite's build is naturally fast, but ensuring dependencies are cached 
