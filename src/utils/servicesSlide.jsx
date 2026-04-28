@@ -16,7 +16,7 @@ import {
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { useNavigate } from 'react-router-dom';
-
+import '@splidejs/react-splide/css';
 
 
 const imageSlides = [
@@ -65,7 +65,7 @@ const ServicesSlide = () => {
     return (
 
 
-        <Box py={10} px={3} bgcolor={theme.palette.background.paper}>
+        <Box maxWidth='xl' mx='auto' py={10} px={3} bgcolor={theme.palette.background.paper}>
 
             <Grid item sx={{ display: { xs: 'flex', }, justifyContent: 'space-between', alignItems: 'center', width: "100%", mb: 4 }}>
 

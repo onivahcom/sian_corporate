@@ -14,6 +14,7 @@ import { useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import ApplicationForm from '../components/ApplicationForm';
+import Header1 from '../components/header/Header1';
 
 
 const ContactUs = () => {
@@ -31,7 +32,7 @@ const ContactUs = () => {
     return (
         <>
 
-            <Header />
+            <Header1 />
 
             <div className='py-10 md:py-20'>
                 <ApplicationForm />

@@ -18,6 +18,7 @@ import Services from './pages/Services'
 import ServiceDetail from './pages/ServiceDetail'
 import SianNextGen from './pages/rought'
 import { blue } from '@mui/material/colors'
+import Services1 from './components/services/Services1'
 
 const App = () => {
 
@@ -73,7 +74,7 @@ const App = () => {
         <Routes>
           <Route path='' element={<LandingPage />}></Route>
           <Route path='about' element={<AboutPage />}></Route>
-          <Route path='services' element={<Services />}></Route>
+          <Route path='services' element={<Services1 />}></Route>
           <Route path='why-us' element={<WhyusPage />}></Route>
           <Route path='contact-us' element={<ContactUs />}></Route>
           <Route path="/services/:servicename" element={<ServiceDetail />} />

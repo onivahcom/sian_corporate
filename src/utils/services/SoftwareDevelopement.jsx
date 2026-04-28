@@ -1,221 +1,156 @@
 import React from 'react';
-import { Container, Typography, Grid, Box, Paper, alpha, Divider, IconButton } from '@mui/material';
-// Icons
-import CodeIcon from '@mui/icons-material/Code';
-import DevicesIcon from '@mui/icons-material/Devices';
-import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
-import CloudQueueIcon from '@mui/icons-material/CloudQueue';
-import EnhancedEncryptionIcon from '@mui/icons-material/EnhancedEncryption';
-import TerminalIcon from '@mui/icons-material/Terminal';
-import Code from '@mui/icons-material/Code';
+import {
+    Smartphone,
+    Settings,
+    Cloud,
+    ShieldCheck,
+    CheckCircle2,
+    ArrowUpRight,
+    Globe
+} from 'lucide-react';
 
 const SoftwareDevelopment = () => {
     const expertise = [
         {
             title: "Web & Mobile Applications",
-            icon: <DevicesIcon fontSize="large" />,
-            image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800", // Code background
-            desc: "From sleek web platforms to powerful mobile apps, we create digital experiences that are fast, secure, and intuitive.",
-            items: ["Enterprise web platforms", "Progressive web apps (PWAs)", "iOS and Android mobile apps", "Internal productivity tools"]
+            icon: <Smartphone size={24} />,
+            description: "From sleek web platforms to powerful mobile apps, we create digital experiences that are fast, secure, and intuitive.",
+            applications: ["Enterprise web platforms", "Progressive web apps (PWAs)", "iOS and Android mobile apps", "Internal productivity tools"]
         },
         {
             title: "Enterprise Software Solutions",
-            icon: <SettingsSuggestIcon fontSize="large" />,
-            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800", // Analytics/Data
-            desc: "We build software that integrates deeply into your business ecosystem, streamlining workflows for maximum efficiency.",
-            items: ["ERP and CRM systems", "Workflow automation tools", "Data management platforms", "Legacy system modernization"]
+            icon: <Settings size={24} />,
+            description: "We build software that integrates deeply into your business ecosystem, streamlining workflows for maximum efficiency.",
+            applications: ["ERP and CRM systems", "Workflow automation tools", "Data management platforms", "Legacy system modernization"]
         },
         {
             title: "Cloud-Native Development",
-            icon: <CloudQueueIcon fontSize="large" />,
-            image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800", // Cloud/Network
-            desc: "Leverage the power of the cloud to scale effortlessly. We design architectures optimized for performance and resilience.",
-            items: ["SaaS platforms", "Cloud-based analytics", "Microservices architecture", "Scalable APIs"]
+            icon: <Cloud size={24} />,
+            description: "Leverage the power of the cloud to scale effortlessly. We design architectures optimized for performance and resilience.",
+            applications: ["SaaS platforms", "Cloud-based analytics", "Microservices architecture", "Scalable APIs"]
         },
         {
             title: "Security & Compliance",
-            icon: <EnhancedEncryptionIcon fontSize="large" />,
-            image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800", // Cyber security
-            desc: "Security is built-in, not bolted on. We follow global compliance standards to protect your data and maintain trust.",
-            items: ["Data encryption", "GDPR, HIPAA, SOC 2", "Secure authentication", "Continuous monitoring"]
+            icon: <ShieldCheck size={24} />,
+            description: "Security is built-in, not bolted on. We follow global compliance standards to protect your data and maintain trust.",
+            applications: ["Data encryption", "GDPR, HIPAA, SOC 2", "Secure authentication", "Continuous monitoring"]
         }
     ];
 
     return (
-        <Box sx={{ bgcolor: '#FFFFFF', pb: 15 }}>
-            {/* Hero / Header Section */}
-            <Box sx={{
-                pt: { xs: 10, md: 15 },
-                pb: { xs: 20, md: 25 },
-                mb: -12,
-                position: 'relative',
-                overflow: 'hidden'
-            }}>
-                {/* Background Decoration */}
-                <Box sx={{
-                    position: 'absolute',
-                    top: 0, right: 0,
-                    width: '40%', height: '100%',
-                    background: 'radial-gradient(circle, rgba(25, 118, 210, 0.15) 0%, transparent 70%)',
-                    zIndex: 0
-                }} />
+        <div className="bg-white text-slate-900 font-sans">
 
-                <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
-                    <Grid container spacing={6} alignItems="center">
-                        <Grid size={{ xs: 12, md: 7 }}>
-                            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                                <TerminalIcon sx={{ color: 'primary.light', mr: 1.5 }} />
-                                <Typography variant="overline" sx={{ fontWeight: 700, letterSpacing: 2, color: 'primary.light' }}>
-                                    Engineering Excellence
-                                </Typography>
-                            </Box>
-                            <Typography variant="h2" sx={{ fontWeight: 800, mb: 3, fontSize: { xs: '2.5rem', md: '3.8rem' }, lineHeight: 1.1 }}>
-                                Building Software That Moves Your Business Forward
-                            </Typography>
-                            <Typography variant="body1" sx={{ opacity: 0.8, fontWeight: 300, lineHeight: 1.8, maxWidth: 600 }}>
-                                We don’t just write code — we craft solutions. Our custom software development services are designed to meet your unique business needs, solve complex problems, and scale seamlessly as your business grows. Every line of code is intentional, every system is built for performance, and every solution is engineered to create a measurable impact.
-                            </Typography>
-                        </Grid>
+            {/* Expertise Domains Grid */}
+            <section className="py-12 md:py-24  bg-[#F4F7FA]">
+                <div className="max-w-[1400px] mx-auto px-6">
 
-                        {/* Hero Image */}
-                        <Grid size={{ xs: 12, md: 5 }} sx={{ display: { xs: 'none', md: 'block' } }}>
-                            <Box
-                                component="img"
-                                src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=1000"
-                                alt="Software Engineering"
-                                sx={{
-                                    width: '100%',
-                                    borderRadius: 8,
-                                    boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)',
-                                    border: '1px solid rgba(255,255,255,0.1)',
-                                    transform: 'perspective(1000px) rotateY(-5deg)'
-                                }}
-                            />
-                        </Grid>
-                    </Grid>
-                </Container>
-            </Box>
+                    <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between mb-20 gap-8">
+                        <div className="space-y-4">
+                            <div className="flex items-center gap-3">
+                                <span className="h-[1px] w-12 bg-blue-600"></span>
+                                <span className="text-blue-600 font-bold text-[11px] tracking-[0.3em] uppercase">
+                                    Infrastructure & Capability
+                                </span>
+                            </div>
+                            <h2 className="text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
+                                Development <span className="text-slate-400">Practices</span>
+                            </h2>
+                        </div>
+                        <div className="max-w-md lg:text-right">
+                            <p className="text-slate-500 leading-relaxed text-sm lg:text-base border-r-0 lg:border-r-4 border-blue-600 lg:pr-8">
+                                Specialized engineering squads for full-cycle product development and system modernization.
+                            </p>
+                        </div>
+                    </div>
 
-            {/* Expertise Section */}
-            <Container maxWidth="lg" sx={{ p: 1 }}>
-                <Box sx={{ mb: 6, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
-                    <Box>
-                        <Typography variant="h4" sx={{ fontWeight: 800, color: '#0F172A', mb: 1 }}>
-                            Our Expertise
-                        </Typography>
-                        <Box sx={{ width: 60, height: 4, bgcolor: 'primary.main', borderRadius: 2 }} />
-                    </Box>
-                </Box>
-
-                <Grid container spacing={6}>
-                    {expertise.map((skill, index) => (
-                        <Grid size={{ xs: 12 }} key={index}>
-                            <Paper
-                                elevation={0}
-                                sx={{
-                                    borderRadius: 8,
-                                    overflow: 'hidden',
-                                    border: '1px solid #E2E8F0',
-                                    transition: 'all 0.4s ease',
-                                    display: 'flex',
-                                    // Stack vertically on mobile, row on desktop
-                                    flexDirection: {
-                                        xs: 'column',
-                                        md: index % 2 === 0 ? 'row' : 'row-reverse'
-                                    },
-                                }}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {expertise.map((item, index) => (
+                            <div
+                                key={index}
+                                className="group relative bg-white border border-slate-200 p-8 md:p-10 flex flex-col transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)]"
                             >
-                                {/* LEFT/RIGHT SIDE: IMAGE BOX */}
-                                <Box sx={{
-                                    width: { xs: '100%', md: '45%' },
-                                    height: { xs: 250, md: 'auto' },
-                                    position: 'relative',
-                                    overflow: 'hidden'
-                                }}>
-                                    <Box
-                                        className="card-image"
-                                        component="img"
-                                        src={skill.image}
-                                        sx={{
-                                            width: '100%',
-                                            height: '100%',
-                                            borderRadius: 8,
-                                            objectFit: 'cover',
-                                            transition: 'transform 0.8s ease',
-                                            filter: 'brightness(0.8)'
-                                        }}
-                                    />
-                                    {/* Floating Icon - Centered on the image side */}
-                                    <Box sx={{
-                                        position: 'absolute',
-                                        top: '50%',
-                                        left: '50%',
-                                        transform: 'translate(-50%, -50%)',
-                                        p: 2.5,
-                                        borderRadius: 4,
-                                        bgcolor: 'rgba(255,255,255,0.95)',
-                                        color: 'primary.main',
-                                        display: 'flex',
-                                        boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
-                                        backdropFilter: 'blur(4px)'
-                                    }}>
-                                        {skill.icon}
-                                    </Box>
-                                </Box>
 
-                                {/* LEFT/RIGHT SIDE: CONTENT BOX */}
-                                <Box sx={{
-                                    p: { xs: 2, md: 8 },
-                                    width: { xs: '100%', md: '55%' },
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    justifyContent: 'center',
-                                    bgcolor: '#FFFFFF'
-                                }}>
-                                    <Typography variant="overline" sx={{ color: 'primary.main', fontWeight: 700, mb: 1 }}>
-                                        Expertise Area {index + 1}
-                                    </Typography>
+                                {/* Meta Header */}
+                                <div className="flex justify-between items-center mb-10">
+                                    <div className="w-14 h-14 bg-slate-50 text-blue-600 flex items-center justify-center rounded-sm group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                                        {item.icon}
+                                    </div>
+                                    <span className="text-4xl font-black text-slate-100 pointer-events-none">
+                                        0{index + 1}
+                                    </span>
+                                </div>
 
-                                    <Typography variant="h4" sx={{ fontWeight: 800, mb: 2, color: '#1E293B' }}>
-                                        {skill.title}
-                                    </Typography>
+                                {/* Core Info */}
+                                <div className="space-y-4 mb-8">
+                                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                                        {item.title}
+                                    </h3>
+                                    <p className="text-slate-500 text-[14px] leading-relaxed">
+                                        {item.description}
+                                    </p>
+                                </div>
 
-                                    <Typography variant="body1" sx={{ color: '#64748B', mb: 4, lineHeight: 1.8, fontSize: '1.1rem' }}>
-                                        {skill.desc}
-                                    </Typography>
+                                {/* Deployment Specs Box */}
+                                <div className="flex-1">
+                                    <div className="bg-slate-50/50 p-6 rounded-sm border border-slate-100">
+                                        <span className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">
+                                            Primary Deliverables
+                                        </span>
+                                        <ul className="space-y-3">
+                                            {item.applications.map((app, i) => (
+                                                <li key={i} className="flex items-start gap-3 text-[12px] font-bold text-slate-700 leading-tight">
+                                                    <CheckCircle2 size={14} className="text-blue-600 shrink-0 mt-0.5" />
+                                                    {app}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
 
-                                    <Divider sx={{ mb: 4, borderStyle: 'dashed' }} />
+                                {/* Interaction Footer */}
+                                <div className="mt-10 pt-6 border-t border-slate-100 flex items-center justify-between">
+                                    <button className="flex items-center gap-2 text-[11px] font-black text-slate-900 uppercase tracking-widest hover:text-blue-600 transition-colors group/btn">
+                                        View Architecture
+                                        <ArrowUpRight size={14} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                                    </button>
+                                    <span className="text-[10px] font-mono text-slate-300 uppercase">
+                                        Stack_v1.0
+                                    </span>
+                                </div>
+                            </div>
+                        ))}
 
-                                    <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 2.5, color: 'primary.main', textTransform: 'uppercase', letterSpacing: 1.5 }}>
-                                        Strategic Solutions:
-                                    </Typography>
+                        {/* Professional CTA Anchor */}
+                        <div className="relative bg-slate-900 p-10 flex flex-col justify-between overflow-hidden">
+                            <div className="absolute -right-10 -bottom-10 text-[12rem] font-black text-white/[0.03] select-none uppercase">
+                                Dev
+                            </div>
 
-                                    <Grid container spacing={2}>
-                                        {skill.items.map((item, i) => (
-                                            <Grid size={{ xs: 12, sm: 6 }} key={i}>
-                                                <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                                                    {/* <Box sx={{
-                                                        width: 8, height: 8,
-                                                        borderRadius: '50%',
-                                                        bgcolor: 'primary.main',
-                                                        mr: 2,
-                                                        opacity: 0.6
-                                                    }} /> */}
-                                                    <IconButton size='small'><Code sx={{ fontSize: 16, color: "grey.800" }} /></IconButton>
-                                                    <Typography variant="body2" sx={{ color: '#334155', fontWeight: 600 }}>
-                                                        {item}
-                                                    </Typography>
-                                                </Box>
-                                            </Grid>
-                                        ))}
-                                    </Grid>
-                                </Box>
-                            </Paper>
-                        </Grid>
-                    ))}
-                </Grid>
-            </Container>
-        </Box>
+                            <div className="relative z-10">
+                                <div className="h-12 w-12 bg-blue-600 flex items-center justify-center mb-6">
+                                    <ArrowUpRight className="text-white" />
+                                </div>
+                                <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
+                                    Custom <br /> System Integration
+                                </h3>
+                                <p className="text-slate-400 text-sm leading-relaxed mb-8">
+                                    Modernize your legacy systems with our 48-hour architectural feasibility assessment.
+                                </p>
+                            </div>
+
+                            <div className="relative z-10 space-y-4">
+                                <button className="w-full bg-blue-600 text-white py-4 rounded-sm text-xs font-bold uppercase tracking-widest hover:bg-blue-700 transition-colors">
+                                    Consult an Architect
+                                </button>
+                                <p className="text-center text-[10px] text-slate-500 font-bold tracking-widest uppercase">
+                                    High-Availability Support
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     );
 };
 

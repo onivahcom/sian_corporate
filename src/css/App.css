@@ -10,8 +10,8 @@ body {
     padding: 0;
     box-sizing: border-box;
     /* background: #053d6b; */
-    font-family: "Merriweather", serif !important;
-    font-style: italic !important;
+    /* font-family: "Merriweather", serif !important;
+    font-style: italic !important; */
     /* letter-spacing: 0.9px; */
 
 }
@@ -26,8 +26,8 @@ h6,
 p {
     /* letter-spacing: 1px; */
 
-    font-family: "Merriweather", serif !important;
-    font-style: italic !important;
+    /* font-family: "Merriweather", serif !important;
+    font-style: italic !important; */
 }
 
 /* in your global CSS */

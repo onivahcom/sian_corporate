@@ -1,160 +1,140 @@
-// Footer.js
 import React from 'react';
-import { Box, Container, Grid, Typography, Link, Stack, Divider, IconButton } from '@mui/material';
-import { Mail, Phone, LocationOn, LinkedIn, Twitter, Instagram, GitHub } from '@mui/icons-material';
+import { NavLink } from 'react-router-dom';
+import {
+    Globe,
+    Mail,
+    MapPin,
+    ArrowUpRight,
+    ShieldCheck
+} from 'lucide-react';
 
 const Footer = () => {
-    const colors = {
-        deepBlue: "#041e35",
-        brandBlue: "#053d6b",
-        accentBlue: "#4fc3f7",
-        textMuted: "#b0bec5",
-    };
+    const currentYear = new Date().getFullYear();
 
-    const linkStyle = {
-        color: colors.textMuted,
-        fontSize: "0.9rem",
-        textDecoration: "none",
-        transition: "all 0.3s ease",
-        "&:hover": {
-            color: colors.accentBlue,
-            transform: "translateX(5px)",
-        },
+    const footerLinks = {
+        Solutions: [
+            { name: "Artificial Intelligence", href: "/services/artificial-intelligence" },
+            { name: "Software Development", href: "/services/software-development" },
+            { name: "Web Applications", href: "/services/web-application-development" },
+            { name: "R&D and Training", href: "/services/research-development-training" },
+            { name: "Internships", href: "/services/internship-opportunities" }
+        ],
+        Company: [
+            { name: "Home", href: "/" },
+            { name: "About Us", href: "/about" },
+            { name: "Why Us", href: "/why-us" },
+            { name: "Contact Us", href: "/contact-us" },
+
+        ],
+        // Support: [
+        //     { name: "Contact Sales", href: "/contact-us" },
+        //     { name: "Technical Support", href: "#" },
+        //     { name: "Documentation", href: "#" },
+        //     { name: "API Status", href: "#" }
+        // ]
     };
 
     return (
-        <Box
-            component="footer"
-            sx={{
-                background: `linear-gradient(135deg, ${colors.deepBlue} 0%, ${colors.brandBlue} 100%)`,
-                color: '#ffffff',
-                pt: { xs: 10, md: 12 },
-                pb: 6,
-                mt: 10,
-                position: "relative",
-                overflow: "hidden",
-                // Subtle background glow for "Blue Mix" feel
-                "&::after": {
-                    content: '""',
-                    position: "absolute",
-                    top: "20%",
-                    left: "10%",
-                    width: "300px",
-                    height: "300px",
-                    background: colors.accentBlue,
-                    filter: "blur(150px)",
-                    opacity: 0.05,
-                    zIndex: 0
-                }
-            }}
-        >
-            <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
-                <Grid container spacing={8} sx={{ display: "flex", justifyContent: "space-evenly" }}>
+        <footer className="bg-[#1A202C] text-gray-400 font-sans border-t border-slate-800">
+            <div className="max-w-[1280px] mx-auto px-6 pt-20 pb-10">
 
-                    {/* Column 1: Brand & Bio */}
-                    <Grid size={{ xs: 12, md: 4 }}>
-                        <Typography variant="h5" sx={{ fontWeight: "900", mb: 3, letterSpacing: "-1px" }}>
-                            SIAN NextGen<span style={{ color: colors.accentBlue }}> Technologies </span>
-                        </Typography>
-                        <Typography variant="body2" sx={{ color: colors.textMuted, lineHeight: 1.8, mb: 4 }}>
-                            Innovating at the intersection of design and technology. We provide high-end full-stack solutions and AI-driven systems to help your corporate brand lead the digital era.
-                        </Typography>
-                        {/* <Stack direction="row" spacing={1}>
-                            {[LinkedIn, Twitter, Instagram, GitHub].map((Icon, i) => (
-                                <IconButton
-                                    key={i}
-                                    sx={{
-                                        color: colors.textMuted,
-                                        bgcolor: "rgba(255,255,255,0.03)",
-                                        "&:hover": { color: colors.accentBlue, bgcolor: "rgba(79, 195, 247, 0.1)" }
-                                    }}
-                                >
-                                    <Icon fontSize="small" />
-                                </IconButton>
+                {/* Main Content Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+
+                    {/* Brand Section */}
+                    <div className="lg:col-span-4 space-y-8">
+                        <div>
+                            <div className="flex items-center gap-1 cursor-default select-none mb-6">
+                                <span className="text-2xl font-black tracking-tighter text-white">SIAN</span>
+                                <span className="text-2xl font-light text-slate-500 tracking-tight ml-0.5 uppercase">NextGen</span>
+                                <div className="w-1.5 h-1.5 bg-blue-500 rounded-full ml-1 mt-2 animate-pulse"></div>
+                            </div>
+                            <p className="text-sm leading-relaxed max-w-xs">
+                                Architecting resilient digital ecosystems through AI-driven
+                                engineering and high-performance software delivery.
+                            </p>
+                        </div>
+
+                        {/* Global Badge */}
+                        <div className="inline-flex items-center gap-3 px-4 py-2 bg-slate-800/50 border border-slate-700 rounded-sm">
+                            <Globe size={16} className="text-blue-400" />
+                            <span className="text-[10px] font-bold text-slate-300 uppercase tracking-widest">
+                                Global Operations
+                            </span>
+                        </div>
+                    </div>
+
+                    {/* Link Columns */}
+                    <div className="lg:col-span-6 grid grid-cols-2 md:grid-cols-2 gap-8">
+                        {Object.entries(footerLinks).map(([category, links]) => (
+                            <div key={category}>
+                                <h5 className="text-white font-bold text-sm uppercase tracking-widest mb-6">
+                                    {category}
+                                </h5>
+                                <ul className="space-y-4">
+                                    {links.map((link) => (
+                                        <li key={link.name}>
+                                            <NavLink
+                                                to={link.href}
+                                                className="text-sm hover:text-blue-400 transition-colors duration-200 flex items-center group"
+                                            >
+                                                {link.name}
+                                                <ArrowUpRight size={12} className="ml-1 opacity-0 group-hover:opacity-100" />
+                                            </NavLink>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Contact Detail Section */}
+                    <div className="lg:col-span-2 space-y-6">
+                        <h5 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Connect</h5>
+                        <div className="space-y-4 text-sm">
+                            <a href="mailto:contact@siannextgen.com" className="flex items-center gap-3 hover:text-white transition-colors">
+                                <Mail size={16} className="text-blue-500" />
+                                contact@sian.tech
+                            </a>
+                            <div className="flex items-start gap-3">
+                                <MapPin size={16} className="text-blue-500 shrink-0" />
+                                <span className="leading-snug">Technical Hub,<br /> Bangalore, India</span>
+                            </div>
+                        </div>
+
+                        {/* Social Icons */}
+                        {/* <div className="flex items-center gap-4 pt-4">
+                            {[Linkedin, Twitter, Github].map((Icon, i) => (
+                                <a key={i} href="#" className="w-8 h-8 rounded-sm bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">
+                                    <Icon size={16} />
+                                </a>
                             ))}
-                        </Stack> */}
-                    </Grid>
+                        </div> */}
+                    </div>
+                </div>
 
-                    {/* Column 2: Navigation & Services */}
-                    <Grid size={{ xs: 12, md: 4 }} sx={{ display: "flex", width: "100%", justifyContent: { xs: 'start', md: "center" } }}>
-                        <Grid container spacing={2}>
-                            <Grid size={12}>
-                                <Typography variant="subtitle1" sx={{ fontWeight: "700", mb: 3 }}>Navigation</Typography>
-                                <Stack spacing={2}>
-                                    <Link href="/" sx={linkStyle}>Home</Link>
-                                    <Link href="/about" sx={linkStyle}>About Us</Link>
-                                    <Link href="/why-us" sx={linkStyle}>Why Choose Us</Link>
-                                    <Link href="/contact" sx={linkStyle}>Contact</Link>
-                                </Stack>
-                            </Grid>
-                            {/* <Grid size={6}>
-                                <Typography variant="subtitle1" sx={{ fontWeight: "700", mb: 3 }}>Expertise</Typography>
-                                <Stack spacing={2}>
-                                    <Link href="#" sx={linkStyle}>Web Apps</Link>
-                                    <Link href="#" sx={linkStyle}>E-Commerce</Link>
-                                    <Link href="#" sx={linkStyle}>Cloud Tech</Link>
-                                    <Link href="#" sx={linkStyle}>AI Systems</Link>
-                                </Stack>
-                            </Grid> */}
-                        </Grid>
-                    </Grid>
+                {/* Bottom Utility Bar */}
+                <div className="pt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div className="flex flex-col md:flex-row items-center gap-6 text-[11px] font-bold uppercase tracking-widest">
+                        <span className="text-slate-500">© {currentYear} Sian Next Gen Technologies</span>
+                        <div className="hidden md:block h-4 w-px bg-slate-700"></div>
+                        <div className="flex gap-6">
+                            <a href="#" className="hover:text-white">Privacy Policy</a>
+                            <a href="#" className="hover:text-white">Terms of Service</a>
+                            <a href="#" className="hover:text-white">Cookies</a>
+                        </div>
+                    </div>
 
-                    {/* Column 3: Contact Glassmorphism Card */}
-                    <Grid size={{ xs: 12, md: 4 }}>
-                        <Box sx={{
-                            p: 4,
-                            borderRadius: 4,
-                            bgcolor: "rgba(255, 255, 255, 0.03)",
-                            border: "1px solid rgba(255, 255, 255, 0.08)",
-                            backdropFilter: "blur(10px)"
-                        }}>
-                            <Typography variant="subtitle1" sx={{ fontWeight: "700", mb: 3 }}>Let's Connect</Typography>
-                            <Stack spacing={3}>
-                                <Stack direction="row" spacing={2} alignItems="center">
-                                    <Mail sx={{ color: colors.accentBlue, fontSize: 20 }} />
-                                    <Box>
-                                        <Typography variant="caption" sx={{ color: colors.textMuted, display: "block" }}>Project Inquiries</Typography>
-                                        <Typography variant="body2" fontWeight="600">siannextgen@gmail.com</Typography>
-                                    </Box>
-                                </Stack>
-                                <Stack direction="row" spacing={2} alignItems="center">
-                                    <Phone sx={{ color: colors.accentBlue, fontSize: 20 }} />
-                                    <Box>
-                                        <Typography variant="caption" sx={{ color: colors.textMuted, display: "block" }}>Support Line</Typography>
-                                        <Typography variant="body2" fontWeight="600">+91 9944266255</Typography>
-                                    </Box>
-                                </Stack>
-                                {/* <Stack direction="row" spacing={2} alignItems="center">
-                                    <LocationOn sx={{ color: colors.accentBlue, fontSize: 20 }} />
-                                    <Box>
-                                        <Typography variant="caption" sx={{ color: colors.textMuted, display: "block" }}>Location</Typography>
-                                        <Typography variant="body2" fontWeight="600">Tech Hub, India</Typography>
-                                    </Box>
-                                </Stack> */}
-                            </Stack>
-                        </Box>
-                    </Grid>
-                </Grid>
-
-                <Divider sx={{ my: 6, borderColor: "rgba(255, 255, 255, 0.05)" }} />
-
-                {/* Bottom Bar */}
-                <Stack
-                    direction={{ xs: "column", sm: "row" }}
-                    justifyContent="space-between"
-                    alignItems="center"
-                    spacing={2}
-                >
-                    <Typography variant="caption" sx={{ color: colors.textMuted }}>
-                        © {new Date().getFullYear()} Sian NextGen. All rights reserved.
-                        {/* <Link href="#" sx={{ ml: 2, color: "inherit", textDecoration: "none" }}>Privacy Policy</Link> */}
-                    </Typography>
-                    <Typography variant="caption" sx={{ color: colors.textMuted, fontStyle: "italic" }}>
-                        Designed with precision for the modern enterprise.
-                    </Typography>
-                </Stack>
-            </Container>
-        </Box>
+                    {/* Trust Factor */}
+                    <div className="flex items-center gap-2 px-3 py-1 border border-slate-700 rounded-sm">
+                        <ShieldCheck size={14} className="text-green-500" />
+                        <span className="text-[9px] font-black text-slate-400 uppercase tracking-tighter">
+                            SOC2 Type II Compliant Infrastructure
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </footer>
     );
 };
 

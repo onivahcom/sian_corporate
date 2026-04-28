@@ -1,161 +1,164 @@
 import React from 'react';
-import { Container, Typography, Grid, Box, Paper, alpha, Divider } from '@mui/material';
-// Icons
-import LanguageIcon from '@mui/icons-material/Language';
-import StorageIcon from '@mui/icons-material/Storage';
-import LayersIcon from '@mui/icons-material/Layers';
-import SpeedIcon from '@mui/icons-material/Speed';
-import TerminalIcon from '@mui/icons-material/Terminal';
-import SearchIcon from '@mui/icons-material/Search';
-import ColorLensIcon from '@mui/icons-material/ColorLens';
-import CodeIcon from '@mui/icons-material/Code';
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
-import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-
+import {
+    Smartphone,
+    Settings,
+    Cloud,
+    ShieldCheck,
+    CheckCircle2,
+    ArrowUpRight,
+    Globe,
+    Languages,
+    LayersIcon
+} from 'lucide-react';
+import { Security, Storage } from '@mui/icons-material';
 const WebApplicationDevelopment = () => {
     const expertise = [
         {
             title: "Frontend Development",
-            icon: <LanguageIcon fontSize="large" />,
+            icon: <Languages fontSize="large" />,
             image: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&q=80&w=800",
-            desc: "We create sleek, intuitive interfaces that engage users and enhance usability.",
-            items: ["Responsive and adaptive web apps", "Interactive dashboards and data visualization", "Single-page applications (SPA)", "Progressive Web Apps (PWA)"]
+            description: "We create sleek, intuitive interfaces that engage users and enhance usability.",
+            applications: ["Responsive and adaptive web apps", "Interactive dashboards and data visualization", "Single-page applications (SPA)", "Progressive Web Apps (PWA)"]
         },
         {
             title: "Backend Development",
-            icon: <StorageIcon fontSize="large" />,
+            icon: <Storage fontSize="large" />,
             image: "https://plus.unsplash.com/premium_photo-1678566111481-8e275550b700?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmFja2VuZCUyMGRldmVsb3BtZW50fGVufDB8fDB8fHww",
-            desc: "Our robust backend systems handle complex logic, data, and integrations with precision.",
-            items: ["Scalable server-side architectures", "API development and integration", "Database design and management", "Cloud-based microservices"]
+            description: "Our robust backend systems handle complex logic, data, and integrations with precision.",
+            applications: ["Scalable server-side architectures", "API development and integration", "Database design and management", "Cloud-based microservices"]
         },
         {
             title: "Full-Stack Development",
             icon: <LayersIcon fontSize="large" />,
             image: "https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?auto=format&fit=crop&q=80&w=800",
-            desc: "From the interface to the server, we deliver end-to-end web solutions that are seamless, secure, and scalable.",
-            items: ["SaaS platforms and subscription services", "E-commerce marketplaces", "Internal workflow tools and portals", "Data-driven web platforms"]
+            description: "From the interface to the server, we deliver end-to-end web solutions that are seamless, secure, and scalable.",
+            applications: ["SaaS platforms and subscription services", "E-commerce marketplaces", "Internal workflow tools and portals", "Data-driven web platforms"]
         },
         {
             title: "Security & Performance",
-            icon: <SpeedIcon fontSize="large" />,
+            icon: <Security fontSize="large" />,
             image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800",
-            desc: "Performance and protection go hand-in-hand. We optimize speed, reliability, and security for every web application we build.",
-            items: ["Secure authentication and authorization", "Data encryption and compliance", "Load testing and performance optimization", "Continuous monitoring and maintenance"]
+            description: "Performance and protection go hand-in-hand. We optimize speed, reliability, and security for every web application we build.",
+            applications: ["Secure authentication and authorization", "Data encryption and compliance", "Load testing and performance optimization", "Continuous monitoring and maintenance"]
         }
     ];
 
-    const processSteps = [
-        { title: "Discover", icon: <SearchIcon />, text: "We begin by understanding your goals, workflows, and challenges. This allows us to define the right problem to solve and align every decision with your business objectives." },
-        { title: "Design", icon: <ColorLensIcon />, text: "We craft thoughtful software and system architectures with elegant user experiences." },
-        { title: "Develop", icon: <CodeIcon />, text: "We build high‑quality, scalable, durable solutions using industry‑leading practices." },
-        { title: "Deploy", icon: <RocketLaunchIcon />, text: "We launch smoothly and integrate seamlessly with your systems for optimal reliability." },
-        { title: "Optimize", icon: <TrendingUpIcon />, text: "Post‑launch, we continuously improve performance, functionality, and user experience." }
-    ];
+
 
     return (
-        <Box sx={{ bgcolor: '#FFFFFF', pb: 15 }}>
-            {/* Hero Section */}
-            <Box sx={{ pt: 15, pb: 25, mb: -12 }}>
-                <Container maxWidth="lg">
-                    <Grid container spacing={6} alignItems="center">
-                        <Grid size={{ xs: 12, md: 7 }}>
-                            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                                <TerminalIcon sx={{ color: 'primary.light', mr: 1.5 }} />
-                                <Typography variant="overline" sx={{ fontWeight: 700, letterSpacing: 2, color: 'primary.light' }}>
-                                    Web Solutions
-                                </Typography>
-                            </Box>
-                            <Typography variant="h2" sx={{ fontWeight: 800, mb: 3, fontSize: { xs: '2.5rem', md: '3.8rem' } }}>
-                                Web Application Development
-                            </Typography>
-                            <Typography variant="h5" sx={{ fontWeight: 700, mb: 2, color: 'primary.light' }}>
-                                Digital Experiences Engineered to Perform
-                            </Typography>
-                            <Typography variant="body1" sx={{ opacity: 0.8, fontWeight: 300, lineHeight: 1.8, fontSize: '1.1rem' }}>
-                                We design web applications that are not just functional, but exceptional. Every interface, every interaction, and every workflow is crafted to deliver speed, reliability, and measurable impact.
-                            </Typography>
-                        </Grid>
-                        <Grid size={{ xs: 12, md: 5 }}>
-                            <Box className="card-image" component="img" src='https://images.unsplash.com/photo-1549692520-acc6669e2f0c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fGJhY2tlbmQlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D' sx={{ width: '100%', height: '100%', maxHeight: 300, objectFit: 'cover', transition: 'transform 0.8s ease', borderRadius: 6 }} />
-                        </Grid>
+        <div className="bg-white text-slate-900 font-sans">
 
-                    </Grid>
-                </Container>
-            </Box>
+            {/* Expertise Domains Grid */}
+            <section className="py-12 md:py-24  bg-[#F4F7FA]">
+                <div className="max-w-[1400px] mx-auto px-6">
 
-            {/* Expertise Section - Alternating Layout */}
-            <Container maxWidth="lg">
-                <Typography variant="h3" sx={{ fontWeight: 800, color: '#0F172A', mb: 6, textAlign: 'center' }}>
-                    Our Expertise
-                </Typography>
+                    <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between mb-20 gap-8">
+                        <div className="space-y-4">
+                            <div className="flex items-center gap-3">
+                                <span className="h-[1px] w-12 bg-blue-600"></span>
+                                <span className="text-blue-600 font-bold text-[11px] tracking-[0.3em] uppercase">
+                                    Infrastructure & Capability
+                                </span>
+                            </div>
+                            <h2 className="text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
+                                Development <span className="text-slate-400">Practices</span>
+                            </h2>
+                        </div>
+                        <div className="max-w-md lg:text-right">
+                            <p className="text-slate-500 leading-relaxed text-sm lg:text-base border-r-0 lg:border-r-4 border-blue-600 lg:pr-8">
+                                We design web applications that are not just functional, but exceptional.
+                            </p>
+                        </div>
+                    </div>
 
-                <Grid container spacing={8}>
-                    {expertise.map((skill, index) => (
-                        <Grid size={{ xs: 12 }} key={index}>
-                            <Paper
-                                elevation={0}
-                                sx={{
-                                    borderRadius: 10,
-                                    overflow: 'hidden',
-                                    border: '1px solid #E2E8F0',
-                                    display: 'flex',
-                                    flexDirection: { xs: 'column', md: index % 2 === 0 ? 'row' : 'row-reverse' },
-                                }}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {expertise.map((item, index) => (
+                            <div
+                                key={index}
+                                className="group relative bg-white border border-slate-200 p-8 md:p-10 flex flex-col transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)]"
                             >
-                                {/* Image Side */}
-                                <Box sx={{ width: { xs: '100%', md: '45%' }, height: { xs: 300, md: 400 }, position: 'relative', overflow: 'hidden' }}>
-                                    <Box className="card-image" component="img" src={skill.image} sx={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.8s ease', borderRadius: 6 }} />
-                                    <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', p: 3, borderRadius: 5, bgcolor: 'rgba(255,255,255,0.9)', color: 'primary.main', display: 'flex', boxShadow: '0 15px 35px rgba(0,0,0,0.2)', backdropFilter: 'blur(8px)' }}>
-                                        {skill.icon}
-                                    </Box>
-                                </Box>
 
-                                {/* Content Side */}
-                                <Box sx={{ p: { xs: 4, md: 8 }, width: { xs: '100%', md: '55%' }, bgcolor: '#FFFFFF', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                                    <Typography variant="h4" sx={{ fontWeight: 800, mb: 2, color: '#1E293B' }}>{skill.title}</Typography>
-                                    <Typography variant="body1" sx={{ color: '#64748B', mb: 4, lineHeight: 1.8, fontSize: '1.05rem' }}>{skill.desc}</Typography>
-                                    <Divider sx={{ mb: 4 }} />
-                                    <Grid container spacing={2}>
-                                        {skill.items.map((item, i) => (
-                                            <Grid size={{ xs: 12, sm: 6 }} key={i}>
-                                                <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                                                    <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: 'primary.main', mr: 2 }} />
-                                                    <Typography variant="body2" sx={{ fontWeight: 600, color: '#334155' }}>{item}</Typography>
-                                                </Box>
-                                            </Grid>
-                                        ))}
-                                    </Grid>
-                                </Box>
-                            </Paper>
-                        </Grid>
-                    ))}
-                </Grid>
+                                {/* Meta Header */}
+                                <div className="flex justify-between items-center mb-10">
+                                    <div className="w-14 h-14 bg-slate-50 text-blue-600 flex items-center justify-center rounded-sm group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                                        {item.icon}
+                                    </div>
+                                    <span className="text-4xl font-black text-slate-100 pointer-events-none">
+                                        0{index + 1}
+                                    </span>
+                                </div>
 
-                {/* Process Section */}
-                <Box sx={{ mt: 20 }}>
-                    <Typography variant="h3" sx={{ fontWeight: 800, color: '#0F172A', mb: 8, textAlign: 'center' }}>
-                        Our Process
-                    </Typography>
-                    <Grid container spacing={4} sx={{ display: 'flex', justifyContent: "center" }}>
-                        {processSteps.map((step, index) => (
-                            <Grid size={{ xs: 12, md: 4 }} key={index}>
-                                <Box sx={{ textAlign: 'center', p: 2 }}>
-                                    <Box sx={{ width: 64, height: 64, borderRadius: '50%', bgcolor: alpha('#1976d2', 0.1), color: 'primary.main', display: 'flex', alignItems: 'center', justifyContent: 'center', mx: 'auto', mb: 3 }}>
-                                        {step.icon}
-                                    </Box>
-                                    <Typography variant="h6" sx={{ fontWeight: 800, mb: 2, color: '#1E293B' }}>
-                                        {step.title}
-                                    </Typography>
-                                    <Typography variant="body2" sx={{ color: '#64748B', lineHeight: 1.6 }}>
-                                        {step.text}
-                                    </Typography>
-                                </Box>
-                            </Grid>
+                                {/* Core Info */}
+                                <div className="space-y-4 mb-8">
+                                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                                        {item.title}
+                                    </h3>
+                                    <p className="text-slate-500 text-[14px] leading-relaxed">
+                                        {item.description}
+                                    </p>
+                                </div>
+
+                                {/* Deployment Specs Box */}
+                                <div className="flex-1">
+                                    <div className="bg-slate-50/50 p-6 rounded-sm border border-slate-100">
+                                        <span className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">
+                                            Primary Deliverables
+                                        </span>
+                                        <ul className="space-y-3">
+                                            {item.applications.map((app, i) => (
+                                                <li key={i} className="flex items-start gap-3 text-[12px] font-bold text-slate-700 leading-tight">
+                                                    <CheckCircle2 size={14} className="text-blue-600 shrink-0 mt-0.5" />
+                                                    {app}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                {/* Interaction Footer */}
+                                <div className="mt-10 pt-6 border-t border-slate-100 flex items-center justify-between">
+                                    <button className="flex items-center gap-2 text-[11px] font-black text-slate-900 uppercase tracking-widest hover:text-blue-600 transition-colors group/btn">
+                                        View Architecture
+                                        <ArrowUpRight size={14} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                                    </button>
+                                    <span className="text-[10px] font-mono text-slate-300 uppercase">
+                                        Stack_v1.0
+                                    </span>
+                                </div>
+                            </div>
                         ))}
-                    </Grid>
-                </Box>
-            </Container>
-        </Box>
+
+                        {/* Professional CTA Anchor */}
+                        <div className="relative bg-slate-900 p-10 flex flex-col justify-between overflow-hidden">
+                            <div className="absolute -right-10 -bottom-10 text-[12rem] font-black text-white/[0.03] select-none uppercase">
+                                Dev
+                            </div>
+
+                            <div className="relative z-10">
+                                <div className="h-12 w-12 bg-blue-600 flex items-center justify-center mb-6">
+                                    <ArrowUpRight className="text-white" />
+                                </div>
+                                <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
+                                    Custom <br /> System Integration
+                                </h3>
+                                <p className="text-slate-400 text-sm leading-relaxed mb-8">
+                                    Modernize your legacy systems with our 48-hour architectural feasibility assessment.
+                                </p>
+                            </div>
+
+                            <div className="relative z-10 space-y-4">
+                                <button className="w-full bg-blue-600 text-white py-4 rounded-sm text-xs font-bold uppercase tracking-widest hover:bg-blue-700 transition-colors">
+                                    Consult an Architect
+                                </button>
+                                <p className="text-center text-[10px] text-slate-500 font-bold tracking-widest uppercase">
+                                    High-Availability Support
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     );
 };
 

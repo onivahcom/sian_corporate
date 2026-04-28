@@ -1,21 +1,13 @@
 import React from 'react'
 import Header from '../components/Header'
 import { Box, Divider } from '@mui/material'
-import HeroSlider from '../utils/HeroSlider'
 import AboutSection from '../utils/AboutSection';
-import ServiceSection from '../utils/ServiceSection';
-import TransformingBusiness from '../utils/TransformingBusiness';
-import AllServices from '../utils/AllServices';
-import Platforms from '../utils/Platforms';
 import Footer from '../components/Footer';
-import Testimonials from '../utils/Testimonials';
-import OurTeam from '../components/OurTeam';
-import HeroSection1 from '../utils/HeroSection1';
-import HeroSection2 from '../utils/HeroSection2';
 import ServicesSlide from '../utils/servicesSlide';
-import HeroSection3 from '../utils/HeroSection3';
 import WhyChooseUs from '../utils/WhyChooseUs';
 import ApplicationForm from '../components/ApplicationForm';
+import HeroSection4 from '../components/hero/HeroSection4';
+import ZohoProfessional from './rought';
 
 
 const slides = [
@@ -39,26 +31,21 @@ const slides = [
 
 const LandingPage = () => {
     return (
-        <Box >
+        <>
+            <ZohoProfessional />
+        </>
+        // <Box >
 
-            <Header />
-            {/* <HeroSlider slides={slides} options={{ loop: false }} /> */}
-            <div className='p-2'>
-
-                <HeroSection3 />
-            </div>
-            <AboutSection />
-            <ServicesSlide />
-            <WhyChooseUs />
-            <ApplicationForm />
-            {/* <TransformingBusiness /> */}
-            {/* <ServiceSection /> */}
-            {/* <AllServices /> */}
-            {/* <Platforms /> */}
-            {/* <Testimonials /> */}
-            {/* <OurTeam /> */}
-            <Footer />
-        </Box>
+        //     <Header />
+        //     <div className='py-10 '>
+        //         <HeroSection4 />
+        //     </div>
+        //     <AboutSection />
+        //     <ServicesSlide />
+        //     <WhyChooseUs />
+        //     <ApplicationForm />
+        //     <Footer />
+        // </Box>
     )
 }
 

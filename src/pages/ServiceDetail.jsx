@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { Box, Container } from '@mui/material';
 
 // Import your independent UI components
@@ -10,16 +10,22 @@ import SoftwareDevelopment from '../utils/services/SoftwareDevelopement';
 import WebApplicationDevelopment from '../utils/services/webapplicationDevelopment';
 import ResearchDevelopment from '../utils/services/ResearchDevelopment';
 import InternshipOpportunities from '../utils/services/InternshipOpportunities';
+import Header1 from '../components/header/Header1';
+import { ArrowRight, BarChart3, Code2, Cpu, ShieldCheck, Users } from 'lucide-react';
+import ServiceSection from '../components/services/ServiceSection';
+
+
 
 const ServiceDetail = () => {
+
     const { servicename } = useParams();
 
     return (
 
-        <Box>
-            <Header />
+        <div>
+            <Header1 />
 
-            <Container >
+            < >
 
                 {servicename === 'artificial-intelligence' && <ArtificialIntelligence />}
                 {servicename === 'software-development' && <SoftwareDevelopment />}
@@ -27,10 +33,13 @@ const ServiceDetail = () => {
                 {servicename === 'research-development-training' && <ResearchDevelopment />}
                 {servicename === 'internship-opportunities' && <InternshipOpportunities />}
 
-            </Container>
+            </>
+
+            <ServiceSection />
+
 
             <Footer />
-        </Box>
+        </div>
     );
 };
 

@@ -1,192 +1,162 @@
 import React from 'react';
-import { Container, Typography, Grid, Box, Paper, alpha, Divider, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
-// Icons
-import ScienceIcon from '@mui/icons-material/Science';
-import SchoolIcon from '@mui/icons-material/School';
-import PsychologyIcon from '@mui/icons-material/Psychology';
-import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import BiotechIcon from '@mui/icons-material/Biotech';
-import CastForEducationIcon from '@mui/icons-material/CastForEducation';
-import IntegrationInstructionsIcon from '@mui/icons-material/IntegrationInstructions';
+import {
+    FlaskConical,
+    GraduationCap,
+    CheckCircle2,
+    ArrowUpRight,
+    Globe,
+    Zap,
+    Search,
+    BookOpen
+} from 'lucide-react';
 
 const ResearchDevelopment = () => {
-    const mainServices = [
+    const expertise = [
         {
             title: "Research & Development (R&D)",
-            icon: <ScienceIcon fontSize="large" />,
-            image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800",
-            desc: "We partner with you through every stage of innovation — from research and feasibility to prototyping and validation. R&D is focused on exploring new solutions, improving existing systems, and creating differentiated technology that gives you a lasting edge.",
-            sectionTitle: "What We Offer:",
-            items: [
+            icon: <FlaskConical size={24} />,
+            description: "We partner with you through every stage of innovation — from research and feasibility to prototyping and validation. R&D is focused on exploring new solutions and creating differentiated technology.",
+            applications: [
                 "Feasibility studies and market research",
                 "Rapid prototyping and proof of concept",
-                "Applied research tailored to your business goals",
-                "Innovation strategy and technical exploration"
+                "Applied research for business goals",
+                "Innovation strategy & exploration"
             ],
-            whyTitle: "Why It Matters:",
-            whyText: "R&D fuels business growth by helping you anticipate trends, develop breakthrough capabilities, and make informed decisions about future product direction. It’s a long‑term investment that accelerates innovation."
+            whyText: "R&D fuels growth by helping you anticipate trends and make informed decisions about future product direction."
         },
         {
             title: "Training & Capability Building",
-            icon: <SchoolIcon fontSize="large" />,
-            image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800",
-            desc: "Technology moves fast — and so should your team. Our training services are designed to equip your people with hands‑on expertise in modern technologies, frameworks, and best practices.",
-            sectionTitle: "Training Focus Areas:",
-            items: [
-                "AI, machine learning & analytics workflows",
+            icon: <GraduationCap size={24} />,
+            description: "Technology moves fast — and so should your team. Our training services are designed to equip your people with hands‑on expertise in modern frameworks and best practices.",
+            applications: [
+                "AI, ML & analytics workflows",
                 "Software development best practices",
-                "Cloud architecture & DevOps fundamentals",
-                "Real‑world workshops with interactive learning",
-                "Long‑term learning plans for sustainable growth"
+                "Cloud architecture & DevOps",
+                "Interactive real-world workshops"
             ],
-            whyTitle: "Our Approach:",
-            whyText: "Our training begins with a needs assessment to tailor content that aligns with your business objectives and the skill levels of your team."
+            whyText: "Our training begins with a needs assessment to tailor content that aligns with your specific business objectives."
         }
     ];
 
     return (
-        <Box sx={{ bgcolor: '#FFFFFF', pb: 15 }}>
-            {/* Hero Section */}
-            <Box sx={{
-                pt: 15,
-                pb: 25,
-                mb: -12
-            }}>
-                <Container maxWidth="lg">
-                    <Grid container spacing={6} alignItems="center">
-                        <Grid size={{ xs: 12, md: 7 }}>
-                            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                                <BiotechIcon sx={{ color: 'primary.light', mr: 1.5 }} />
-                                <Typography variant="overline" sx={{ fontWeight: 700, letterSpacing: 3, color: 'primary.light' }}>
-                                    Innovation & Growth
-                                </Typography>
-                            </Box>
-                            <Typography variant="h2" sx={{ fontWeight: 800, mb: 3, fontSize: { xs: '2.5rem', md: '3.8rem' } }}>
-                                Research, Development & Training
-                            </Typography>
-                            <Typography variant="h5" sx={{ fontWeight: 300, opacity: 0.9, lineHeight: 1.6, maxWidth: 800 }}>
-                                Bridging the gap between visionary research and practical team capability to ensure your competitive edge.
-                            </Typography>
-                        </Grid>
+        <div className="bg-white text-slate-900 font-sans">
 
-                        <Grid size={{ xs: 12, md: 5 }}>
-                            <Box className="card-image" component="img" src='https://images.unsplash.com/photo-1768796370577-c6e8b708b980?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fHJlc2VhcmNoJTIwYW5kJTIwdHJhaW5pbmd8ZW58MHx8MHx8fDA%3D' sx={{ width: '100%', height: '100%', maxHeight: 300, objectFit: 'cover', transition: 'transform 0.8s ease', borderRadius: 6 }} />
-                        </Grid>
-                    </Grid>
-                </Container>
-            </Box>
 
-            {/* Alternating Services Section */}
-            <Container maxWidth="lg">
-                <Grid container spacing={10}>
-                    {mainServices.map((service, index) => (
-                        <Grid size={{ xs: 12 }} key={index}>
-                            <Paper
-                                elevation={0}
-                                sx={{
-                                    borderRadius: 10,
-                                    overflow: 'hidden',
-                                    border: '1px solid #E2E8F0',
-                                    display: 'flex',
-                                    flexDirection: { xs: 'column', md: index % 2 === 0 ? 'row' : 'row-reverse' },
-                                    transition: 'all 0.4s ease',
-                                    '&:hover': {
-                                        boxShadow: '0 40px 80px -15px rgba(0,0,0,0.08)',
-                                    }
-                                }}
+
+            {/* Expertise Domains Grid */}
+            <section className="py-12 md:py-24  bg-[#F4F7FA]">
+                <div className="max-w-[1400px] mx-auto px-6">
+
+                    {/* Grid Title */}
+                    <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between mb-20 gap-8">
+                        <div className="space-y-4">
+                            <div className="flex items-center gap-3">
+                                <span className="h-[1px] w-12 bg-blue-600"></span>
+                                <span className="text-blue-600 font-bold text-[11px] tracking-[0.3em] uppercase">
+                                    Innovation & Learning
+                                </span>
+                            </div>
+                            <h2 className="text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
+                                Future-Proofing <span className="text-slate-400">Enterprise Intelligence</span>
+                            </h2>
+                        </div>
+                        <div className="max-w-md lg:text-right">
+                            <p className="text-slate-500 leading-relaxed text-sm lg:text-base border-r-0 lg:border-r-4 border-blue-600 lg:pr-8">
+                                Bridging the gap between academic research and commercial application. We empower your organization through specialized R&D and world-class technical training.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {expertise.map((item, index) => (
+                            <div
+                                key={index}
+                                className="group relative bg-white border border-slate-200 p-8 md:p-10 flex flex-col transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)]"
                             >
-                                {/* Image / Visual Side */}
-                                <Box sx={{ width: { xs: '100%', md: '45%' }, height: { xs: 350, md: 'auto' }, position: 'relative' }}>
-                                    <Box
-                                        component="img"
-                                        src={service.image}
-                                        sx={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.9)' }}
-                                    />
-                                    <Box sx={{
-                                        position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
-                                        p: 3, borderRadius: 5, bgcolor: 'rgba(255,255,255,0.95)', color: 'primary.main',
-                                        boxShadow: '0 20px 40px rgba(0,0,0,0.2)', backdropFilter: 'blur(10px)'
-                                    }}>
-                                        {service.icon}
-                                    </Box>
-                                </Box>
+                                {/* Meta Header */}
+                                <div className="flex justify-between items-center mb-10">
+                                    <div className="w-14 h-14 bg-slate-50 text-blue-600 flex items-center justify-center rounded-sm group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                                        {item.icon}
+                                    </div>
+                                    <span className="text-4xl font-black text-slate-100 pointer-events-none">
+                                        0{index + 1}
+                                    </span>
+                                </div>
 
-                                {/* Content Side */}
-                                <Box sx={{ p: { xs: 5, md: 8 }, width: { xs: '100%', md: '55%' }, bgcolor: '#FFFFFF' }}>
-                                    <Typography variant="h3" sx={{ fontWeight: 800, mb: 3, color: '#0F172A' }}>
-                                        {service.title}
-                                    </Typography>
-                                    <Typography variant="body1" sx={{ color: '#64748B', mb: 4, lineHeight: 1.8, fontSize: '1.1rem' }}>
-                                        {service.desc}
-                                    </Typography>
+                                {/* Core Info */}
+                                <div className="space-y-4 mb-8">
+                                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                                        {item.title}
+                                    </h3>
+                                    <p className="text-slate-500 text-[14px] leading-relaxed italic border-l-2 border-slate-100 pl-4">
+                                        {item.description}
+                                    </p>
+                                </div>
 
-                                    <Typography variant="subtitle1" sx={{ fontWeight: 800, color: 'primary.main', mb: 2, textTransform: 'uppercase', letterSpacing: 1 }}>
-                                        {service.sectionTitle}
-                                    </Typography>
-                                    <List sx={{ mb: 4 }}>
-                                        {service.items.map((item, i) => (
-                                            <ListItem key={i} disableGutters sx={{ py: 0.5 }}>
-                                                <ListItemIcon sx={{ minWidth: 35 }}>
-                                                    <CheckCircleIcon sx={{ color: 'primary.main', fontSize: 20 }} />
-                                                </ListItemIcon>
-                                                <ListItemText primary={item} primaryTypographyProps={{ fontWeight: 600, color: '#334155' }} />
-                                            </ListItem>
-                                        ))}
-                                    </List>
+                                {/* Deployment Specs Box */}
+                                <div className="flex-1">
+                                    <div className="bg-slate-50/50 p-6 rounded-sm border border-slate-100 mb-6">
+                                        <span className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">
+                                            Offerings:
+                                        </span>
+                                        <ul className="space-y-3">
+                                            {item.applications.map((app, i) => (
+                                                <li key={i} className="flex items-start gap-3 text-[12px] font-bold text-slate-700 leading-tight">
+                                                    <CheckCircle2 size={14} className="text-blue-600 shrink-0 mt-0.5" />
+                                                    {app}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                    <p className="text-[11px] text-slate-400 leading-relaxed font-medium">
+                                        <strong>Outcome:</strong> {item.whyText}
+                                    </p>
+                                </div>
 
-                                    <Box sx={{ p: 3, bgcolor: '#F8FAFC', borderRadius: 4, borderLeft: '4px solid', borderColor: 'primary.main' }}>
-                                        <Typography variant="subtitle2" sx={{ fontWeight: 800, mb: 1, color: '#1E293B' }}>
-                                            {service.whyTitle}
-                                        </Typography>
-                                        <Typography variant="body2" sx={{ color: '#64748B', lineHeight: 1.6 }}>
-                                            {service.whyText}
-                                        </Typography>
-                                    </Box>
-                                </Box>
-                            </Paper>
-                        </Grid>
-                    ))}
-                </Grid>
-
-                {/* Synergy Section: How R&D and Training Work Together */}
-                <Box sx={{ mt: 20, p: { xs: 5, md: 10 }, borderRadius: 10, background: 'linear-gradient(145deg, #F1F5F9 0%, #E2E8F0 100%)', position: 'relative', overflow: 'hidden' }}>
-                    <PsychologyIcon sx={{ position: 'absolute', top: -20, right: -20, fontSize: 250, opacity: 0.03, color: '#000' }} />
-
-                    <Box sx={{ textAlign: 'center', mb: 8 }}>
-                        <Box sx={{ display: 'inline-flex', p: 1.5, borderRadius: '50%', bgcolor: 'primary.main', color: 'white', mb: 3 }}>
-                            <IntegrationInstructionsIcon />
-                        </Box>
-                        <Typography variant="h3" sx={{ fontWeight: 900, color: '#0F172A', mb: 2 }}>
-                            How R&D and Training Work Together
-                        </Typography>
-                        <Typography variant="h6" sx={{ color: '#64748B', fontWeight: 400 }}>
-                            Innovation is more powerful when knowledge travels with it.
-                        </Typography>
-                    </Box>
-
-                    <Grid container spacing={4}>
-                        {[
-                            { title: "Discovery & Sustainability", text: "You not only discover new solutions but also build internal expertise to sustain and scale them." },
-                            { title: "Confident Deployment", text: "Your team becomes confident deploying real technology, not just theoretical knowledge." },
-                            { title: "Closing the Gap", text: "You close the gap between vision and execution — fostering continuous innovation and performance improvement." }
-                        ].map((point, idx) => (
-                            <Grid size={{ xs: 12, md: 4 }} key={idx}>
-                                <Paper elevation={0} sx={{ p: 4, height: '100%', borderRadius: 6, bgcolor: 'white', border: '1px solid #CBD5E1' }}>
-                                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                                        <TipsAndUpdatesIcon sx={{ mr: 1.5, color: 'primary.main' }} />
-                                        <Typography variant="h6" sx={{ fontWeight: 800, color: '#1E293B' }}>{point.title}</Typography>
-                                    </Box>
-                                    <Typography variant="body2" sx={{ color: '#64748B', lineHeight: 1.7, fontSize: '1rem' }}>
-                                        {point.text}
-                                    </Typography>
-                                </Paper>
-                            </Grid>
+                                {/* Interaction Footer */}
+                                <div className="mt-10 pt-6 border-t border-slate-100 flex items-center justify-between">
+                                    <button className="flex items-center gap-2 text-[11px] font-black text-slate-900 uppercase tracking-widest hover:text-blue-600 transition-colors group/btn">
+                                        View Roadmap
+                                        <ArrowUpRight size={14} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                                    </button>
+                                    <span className="text-[10px] font-mono text-slate-300 uppercase">
+                                        Lab_SLA
+                                    </span>
+                                </div>
+                            </div>
                         ))}
-                    </Grid>
-                </Box>
-            </Container>
-        </Box>
+
+                        {/* Professional CTA Anchor */}
+                        <div className="relative bg-slate-900 p-10 flex flex-col justify-between overflow-hidden">
+                            <div className="absolute -right-10 -bottom-10 text-[12rem] font-black text-white/[0.03] select-none uppercase">
+                                R&D
+                            </div>
+
+                            <div className="relative z-10">
+                                <div className="h-12 w-12 bg-blue-600 flex items-center justify-center mb-6">
+                                    <Search className="text-white" size={20} />
+                                </div>
+                                <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
+                                    Feasibility <br /> Studies
+                                </h3>
+                                <p className="text-slate-400 text-sm leading-relaxed mb-8">
+                                    Request a comprehensive market research and technical feasibility study for your next project.
+                                </p>
+                            </div>
+
+                            <div className="relative z-10 space-y-4">
+                                <button className="w-full bg-blue-600 text-white py-4 rounded-sm text-xs font-bold uppercase tracking-widest hover:bg-blue-700 transition-colors">
+                                    Request Scoping
+                                </button>
+                                <p className="text-center text-[10px] text-slate-500 font-bold tracking-widest uppercase text-white opacity-40">
+                                    Confidential IP Protection
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     );
 };
 
