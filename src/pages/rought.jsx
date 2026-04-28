@@ -311,7 +311,7 @@ const ZohoProfessional = () => {
             </section>
 
             <section id="contact" className="py-12 md:py-20 bg-white border-t border-gray-100">
-                <div className="max-w-[1280px] mx-auto px-2 md:px-20">
+                <div className="max-w-[1280px] mx-auto px-6 md:px-20">
 
                     {/* Section Header */}
                     <div className="mb-16 border-l-4 border-blue-600 pl-6">

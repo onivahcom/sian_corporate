@@ -55,7 +55,7 @@ const ServiceSection = () => {
                     <p className="text-gray-500 mt-2">End-to-end technical capabilities for the modern enterprise.</p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 bg-gray-100 border border-gray-200">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-1  bg-gray-100 md:border border-gray-200">
                     {services.map((item, idx) => (
                         <NavLink
                             to={`/services/${item.slug}`}
@@ -68,8 +68,10 @@ const ServiceSection = () => {
                                     src={item.imageUrl}
                                     alt={item.title}
                                     className="w-full h-full object-cover rounded-md"
+                                    data-aos='fade-in'
+
                                 />
-                                <div className="absolute inset-0 bg-slate-900/30 group-hover:bg-transparent transition-colors duration-300"></div>
+                                <div className="absolute inset-0  group-hover:bg-transparent transition-colors duration-300"></div>
                             </div>
 
                             {/* Content Section */}
