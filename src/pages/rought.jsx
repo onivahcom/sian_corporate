@@ -195,20 +195,20 @@ const ZohoProfessional = () => {
                         </div>
 
                         {/* Right: Architectural Image Composite */}
-                        <div className="w-full lg:w-6/12 relative mt-12 lg:mt-0">
+                        <div className="w-full lg:w-6/12 relative mt-6 lg:mt-0">
                             <div className="grid grid-cols-12 gap-3 md:gap-4">
 
                                 {/* Large Main Image - Full width on mobile, 8-cols on desktop */}
-                                <div className="col-span-12 md:col-span-8 overflow-hidden rounded-sm shadow-xl md:shadow-2xl">
+                                <div className="col-span-12 md:col-span-12 overflow-hidden rounded-sm shadow-xl md:shadow-2xl">
                                     <img
-                                        src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"
+                                        src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg"
                                         alt="Corporate Headquarters"
-                                        className="w-full h-[300px] md:h-[300px] object-cover hover:scale-105 transition-transform duration-700"
+                                        className="w-full h-[400px] md:h-auto object-cover md:object-contain rounded-xl"
                                     />
                                 </div>
 
                                 {/* Secondary Tall Image - Hidden on very small screens, visible from md up */}
-                                <div className="hidden md:flex md:col-span-4 flex-col gap-4">
+                                {/* <div className="hidden md:flex md:col-span-4 flex-col gap-4">
                                     <div className="h-full overflow-hidden rounded-sm grayscale hover:grayscale-0 transition duration-500">
                                         <img
                                             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80"
@@ -216,10 +216,10 @@ const ZohoProfessional = () => {
                                             className="w-full h-full object-cover"
                                         />
                                     </div>
-                                </div>
+                                </div> */}
 
                                 {/* Overlapping Detail Card */}
-                                <div className="relative md:absolute mt-[-2rem] md:mt-0 md:-bottom-10 md:right-10 bg-[#0d4ea3] p-6 md:p-8 text-white w-[90vw] mx-auto md:max-w-[280px] rounded-sm shadow-xl z-10">
+                                <div className="relative md:absolute mt-[-2rem] md:mt-0 md:-bottom-20 md:right-10 bg-[#0d4ea3] p-6 md:p-8 text-white w-[90vw] mx-auto md:max-w-[280px] rounded-sm shadow-xl z-10">
                                     <p className="text-xs md:text-sm font-medium italic opacity-90 mb-4">
                                         "Their ability to handle complex marketplace logic while maintaining
                                         enterprise security is unparalleled."
@@ -243,7 +243,7 @@ const ZohoProfessional = () => {
             <ServiceSection />
 
             {/* Features Section (New) */}
-            <section id="features" className="py-24 bg-white overflow-hidden">
+            <section id="features" className="py-12 md:p-24 bg-white overflow-hidden">
                 <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
 
                     {/* Section Header */}
@@ -262,11 +262,11 @@ const ZohoProfessional = () => {
                     </div>
 
                     {/* The "Connected" Feature Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-gray-100">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 border-t border-l border-gray-100">
                         {features.map((feature, idx) => (
                             <div
                                 key={idx}
-                                className="group relative p-8 md:p-12 border-r border-b border-gray-100 hover:bg-slate-50 transition-all duration-300"
+                                className="group relative p-8 md:p-12 border-r border-b border-white bg-slate-50 transition-all duration-300"
                             >
                                 {/* Subtle Numbering - A very Zoho-style corporate detail */}
                                 <span className="absolute top-8 right-8 text-xs font-mono text-gray-200 group-hover:text-blue-200 transition-colors">
@@ -285,9 +285,6 @@ const ZohoProfessional = () => {
                                 <p className="text-gray-600 leading-relaxed text-sm md:text-base opacity-80 group-hover:opacity-100 transition-opacity">
                                     {feature.desc}
                                 </p>
-
-                                {/* Bottom highlight bar */}
-                                <div className="absolute bottom-0 left-0 w-0 h-1 bg-blue-600 transition-all duration-500 group-hover:w-full"></div>
                             </div>
                         ))}
                     </div>
@@ -313,8 +310,8 @@ const ZohoProfessional = () => {
                 </div>
             </section>
 
-            <section id="contact" className="py-24 bg-white border-t border-gray-100">
-                <div className="max-w-[1280px] mx-auto px-2 md:px-6">
+            <section id="contact" className="py-12 md:py-20 bg-white border-t border-gray-100">
+                <div className="max-w-[1280px] mx-auto px-2 md:px-20">
 
                     {/* Section Header */}
                     <div className="mb-16 border-l-4 border-blue-600 pl-6">

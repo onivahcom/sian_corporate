@@ -22,7 +22,8 @@ const InternshipOpportunities = () => {
                 "Live deployment cycles",
                 "Professional dev environments",
                 "Enterprise-grade tooling"
-            ]
+            ],
+            bgImage: 'https://images.pexels.com/photos/36706460/pexels-photo-36706460.jpeg'
         },
         {
             title: "Skill Development with Mentorship",
@@ -33,7 +34,9 @@ const InternshipOpportunities = () => {
                 "Career guidance sessions",
                 "Code review participation",
                 "Architectural deep-dives"
-            ]
+            ],
+            bgImage: 'https://images.pexels.com/photos/7964486/pexels-photo-7964486.jpeg'
+
         }
     ];
 
@@ -78,7 +81,6 @@ const InternshipOpportunities = () => {
                                 key={index}
                                 className="group relative bg-white border border-slate-200 p-8 md:p-10 flex flex-col transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)]"
                             >
-                                <div className="absolute top-0 left-0 h-1 bg-blue-600 w-0 group-hover:w-full transition-all duration-700"></div>
 
                                 <div className="flex justify-between items-center mb-10">
                                     <div className="w-14 h-14 bg-slate-50 text-blue-600 flex items-center justify-center rounded-sm group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
@@ -88,6 +90,18 @@ const InternshipOpportunities = () => {
                                         P0{index + 1}
                                     </span>
                                 </div>
+
+                                {/* Featured Image - Now directly in the flow */}
+                                <div className="relative w-full h-48 mb-8 overflow-hidden rounded-sm bg-slate-100">
+                                    <img
+                                        src={item.bgImage}
+                                        alt={item.title}
+                                        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 grayscale-[50%] group-hover:grayscale-0"
+                                    />
+                                    {/* Subtle overlay to keep it consistent with the slate theme */}
+                                    <div className="absolute inset-0 bg-slate-900/5 group-hover:bg-transparent transition-colors duration-500" />
+                                </div>
+
 
                                 <div className="space-y-4 mb-8">
                                     <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
@@ -105,7 +119,7 @@ const InternshipOpportunities = () => {
                                         </span>
                                         <ul className="space-y-3">
                                             {item.applications.map((app, i) => (
-                                                <li key={i} className="flex items-start gap-3 text-[12px] font-bold text-slate-700 leading-tight">
+                                                <li key={i} className="flex items-start gap-3 text-[13px] font-bold text-slate-700 leading-tight">
                                                     <CheckCircle2 size={14} className="text-blue-600 shrink-0 mt-0.5" />
                                                     {app}
                                                 </li>
@@ -139,8 +153,8 @@ const InternshipOpportunities = () => {
                                                 {feat.icon}
                                             </div>
                                             <div>
-                                                <h4 className="text-[13px] font-bold text-slate-900">{feat.title}</h4>
-                                                <p className="text-[11px] text-slate-500 leading-relaxed">{feat.text}</p>
+                                                <h4 className="text-[14px] font-bold text-slate-900">{feat.title}</h4>
+                                                <p className="text-[12px] text-slate-500 leading-relaxed">{feat.text}</p>
                                             </div>
                                         </div>
                                     ))}

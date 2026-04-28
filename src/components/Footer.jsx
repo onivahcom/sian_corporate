@@ -125,13 +125,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Trust Factor */}
-                    <div className="flex items-center gap-2 px-3 py-1 border border-slate-700 rounded-sm">
-                        <ShieldCheck size={14} className="text-green-500" />
-                        <span className="text-[9px] font-black text-slate-400 uppercase tracking-tighter">
-                            SOC2 Type II Compliant Infrastructure
-                        </span>
-                    </div>
+
                 </div>
             </div>
         </footer>

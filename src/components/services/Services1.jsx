@@ -20,7 +20,8 @@ const Services1 = () => {
             details: 'Our AI suite focuses on operationalizing machine learning. We don’t just build models; we build the pipelines that sustain them.',
             features: ['Conversational AI and chatbot interfaces', 'Automated document analysis', 'Sentiment and opinion tracking', 'Internal knowledge assistants'],
             slug: 'artificial-intelligence',
-            icon: <Cpu className="w-8 h-8" />
+            icon: <Cpu className="w-8 h-8" />,
+            imageUrl: 'https://media.istockphoto.com/id/2252678503/photo/multimodal-ai-technology-concept-with-digital-blocks-representing-artificial-intelligence.jpg?b=1&s=612x612&w=0&k=20&c=cqJKU6oBlAq9sHZ6_ATu6kttWRnj9fPDj9H7iy2W2n0='
         },
         {
             title: 'Software Development',
@@ -28,7 +29,8 @@ const Services1 = () => {
             details: 'Specializing in high-concurrency systems and microservices architecture using modern JavaScript ecosystems.',
             features: ['Cloud-Native Engineering', 'Legacy System Modernization', 'API-First Architecture'],
             slug: 'software-development',
-            icon: <Code2 className="w-8 h-8" />
+            icon: <Code2 className="w-8 h-8" />,
+            imageUrl: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800'
         },
         {
             title: 'Web Application Development',
@@ -36,7 +38,8 @@ const Services1 = () => {
             details: 'End-to-end web solutions built for high performance and military-grade security standards.',
             features: ['Progressive Web Apps (PWA)', 'Real-time Data Dashboards', 'Enterprise CMS Integration'],
             slug: 'web-application-development',
-            icon: <BarChart3 className="w-8 h-8" />
+            icon: <BarChart3 className="w-8 h-8" />,
+            imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800'
         },
         {
             title: 'R&D and Training',
@@ -44,7 +47,8 @@ const Services1 = () => {
             details: 'Bridging the gap between academic research and commercial application through rigorous testing.',
             features: ['Emerging Tech Audits', 'Custom Engineering Workshops', 'Prototype Incubation'],
             slug: 'research-development-training',
-            icon: <ShieldCheck className="w-8 h-8" />
+            icon: <ShieldCheck className="w-8 h-8" />,
+            imageUrl: 'https://images.pexels.com/photos/5999086/pexels-photo-5999086.jpeg'
         },
         {
             title: 'Internship Opportunities',
@@ -52,7 +56,9 @@ const Services1 = () => {
             details: 'A dedicated pathway for junior talent to gain hands-on experience in full-stack development.',
             features: ['MERN Stack Mentorship', 'Agile Workflow Training', 'Career Placement Tracks'],
             slug: 'internship-opportunities',
-            icon: <Users className="w-8 h-8" />
+            icon: <Users className="w-8 h-8" />,
+            imageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800'
+
         }
     ];
 
@@ -145,10 +151,21 @@ const Services1 = () => {
                                             {service.icon}
                                         </div>
                                         <h2 className="text-2xl font-bold text-slate-900 mb-4">{service.title}</h2>
-                                        <div className="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase tracking-widest">
+                                        <div className="flex items-center gap-2 text-xs mb-5 font-bold text-gray-400 uppercase tracking-widest">
                                             <Globe size={14} /> Global Availability
                                         </div>
+
+                                        {/* Service Image Section */}
+                                        <div className="h-45 overflow-hidden relative">
+                                            <img
+                                                src={service.imageUrl}
+                                                alt={service.title}
+                                                className="w-full h-full object-cover rounded-lg"
+                                            />
+                                            <div className="absolute inset-0 bg-slate-900/30 group-hover:bg-transparent transition-colors duration-300 rounded-lg"></div>
+                                        </div>
                                     </div>
+
 
                                     <div className="md:w-2/3 border-t md:border-t-0 md:border-l border-gray-100 pt-8 md:pt-0 md:pl-12">
                                         <p className="text-gray-600 mb-6 leading-relaxed italic">

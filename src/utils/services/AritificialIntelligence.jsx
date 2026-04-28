@@ -35,21 +35,21 @@ const ArtificialIntelligence = () => {
             title: "Computer Vision",
             icon: <ScanEye className="w-6 h-6 text-blue-600" />,
             description: "Images and videos contain a depth of untapped intelligence. We design computer vision systems that interpret visual data with precision and respond in real time.",
-            bgImage: "https://images.unsplash.com/photo-1527430253228-e92d4fdfde2d?auto=format&fit=crop&q=80&w=600",
+            bgImage: "https://images.pexels.com/photos/7887258/pexels-photo-7887258.jpeg",
             applications: ["Quality control and defect detection", "Facial recognition", "Retail analytics", "Medical imaging analysis"]
         },
         {
             title: "AI-Powered Automation",
             icon: <Settings2 className="w-6 h-6 text-blue-600" />,
             description: "If a task is repetitive, we look for a way to automate it intelligently. We design AI-driven workflows that cut manual effort and reduce errors.",
-            bgImage: "https://images.unsplash.com/photo-1518433278988-2b2bb7030928?auto=format&fit=crop&q=80&w=600",
+            bgImage: "https://images.pexels.com/photos/8438951/pexels-photo-8438951.jpeg",
             applications: ["End-to-end process automation", "Intelligent ticket routing", "Workflow optimization", "Data entry and validation automation"]
         },
         {
             title: "Predictive Analytics",
             icon: <BarChart4 className="w-6 h-6 text-blue-600" />,
             description: "Anticipation is a competitive advantage. We design models that learn from historical data to forecast trends, identify risks early, and reveal opportunities.",
-            bgImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+            bgImage: "https://images.pexels.com/photos/5833267/pexels-photo-5833267.jpeg",
             applications: ["Customer churn prediction", "Sales and revenue forecasting", "Risk modeling", "Market trend analysis and strategic planning"]
         }
     ];
@@ -87,8 +87,6 @@ const ArtificialIntelligence = () => {
                                 key={index}
                                 className="group relative bg-white border border-slate-200 p-6 md:p-10 flex flex-col transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)]"
                             >
-                                {/* Hover Progress Bar */}
-                                {/* <div className="absolute top-0 left-0 h-1 bg-blue-600 w-0 group-hover:w-full transition-all duration-700"></div> */}
 
                                 {/* Top Meta Info */}
                                 <div className="flex justify-between items-center mb-10">
@@ -99,6 +97,17 @@ const ArtificialIntelligence = () => {
                                     <span className="text-4xl font-black text-slate-100 group-hover:text-slate-200 transition-colors pointer-events-none">
                                         0{index + 1}
                                     </span>
+                                </div>
+
+                                {/* Featured Image - Now directly in the flow */}
+                                <div className="relative w-full h-48 mb-8 overflow-hidden rounded-sm bg-slate-100">
+                                    <img
+                                        src={item.bgImage}
+                                        alt={item.title}
+                                        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 grayscale-[50%] group-hover:grayscale-0"
+                                    />
+                                    {/* Subtle overlay to keep it consistent with the slate theme */}
+                                    <div className="absolute inset-0 bg-slate-900/5 group-hover:bg-transparent transition-colors duration-500" />
                                 </div>
 
                                 {/* Content */}
@@ -119,7 +128,7 @@ const ArtificialIntelligence = () => {
                                         </span>
                                         <ul className="space-y-3">
                                             {item.applications.map((app, i) => (
-                                                <li key={i} className="flex items-start gap-3 text-[12px] font-bold text-slate-700 leading-tight">
+                                                <li key={i} className="flex items-start gap-3 text-[13px] font-bold text-slate-700 leading-tight">
                                                     <CheckCircle2 size={14} className="text-blue-600 shrink-0 mt-0.5" />
                                                     {app}
                                                 </li>

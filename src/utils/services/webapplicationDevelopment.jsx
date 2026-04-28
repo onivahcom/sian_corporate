@@ -88,6 +88,18 @@ const WebApplicationDevelopment = () => {
                                     </span>
                                 </div>
 
+
+                                {/* Featured Image - Now directly in the flow */}
+                                <div className="relative w-full h-48 mb-8 overflow-hidden rounded-sm bg-slate-100">
+                                    <img
+                                        src={item.image}
+                                        alt={item.title}
+                                        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 grayscale-[50%] group-hover:grayscale-0"
+                                    />
+                                    {/* Subtle overlay to keep it consistent with the slate theme */}
+                                    <div className="absolute inset-0 bg-slate-900/5 group-hover:bg-transparent transition-colors duration-500" />
+                                </div>
+
                                 {/* Core Info */}
                                 <div className="space-y-4 mb-8">
                                     <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
@@ -106,7 +118,7 @@ const WebApplicationDevelopment = () => {
                                         </span>
                                         <ul className="space-y-3">
                                             {item.applications.map((app, i) => (
-                                                <li key={i} className="flex items-start gap-3 text-[12px] font-bold text-slate-700 leading-tight">
+                                                <li key={i} className="flex items-start gap-3 text-[13px] font-bold text-slate-700 leading-tight">
                                                     <CheckCircle2 size={14} className="text-blue-600 shrink-0 mt-0.5" />
                                                     {app}
                                                 </li>

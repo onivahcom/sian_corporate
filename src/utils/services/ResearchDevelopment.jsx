@@ -22,6 +22,7 @@ const ResearchDevelopment = () => {
                 "Applied research for business goals",
                 "Innovation strategy & exploration"
             ],
+            bgImage: "https://images.pexels.com/photos/9574502/pexels-photo-9574502.jpeg",
             whyText: "R&D fuels growth by helping you anticipate trends and make informed decisions about future product direction."
         },
         {
@@ -34,6 +35,7 @@ const ResearchDevelopment = () => {
                 "Cloud architecture & DevOps",
                 "Interactive real-world workshops"
             ],
+            bgImage: "https://images.pexels.com/photos/7794078/pexels-photo-7794078.jpeg",
             whyText: "Our training begins with a needs assessment to tailor content that aligns with your specific business objectives."
         }
     ];
@@ -83,6 +85,17 @@ const ResearchDevelopment = () => {
                                     </span>
                                 </div>
 
+                                {/* Featured Image - Now directly in the flow */}
+                                <div className="relative w-full h-48 mb-8 overflow-hidden rounded-sm bg-slate-100">
+                                    <img
+                                        src={item.bgImage}
+                                        alt={item.title}
+                                        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 grayscale-[50%] group-hover:grayscale-0"
+                                    />
+                                    {/* Subtle overlay to keep it consistent with the slate theme */}
+                                    <div className="absolute inset-0 bg-slate-900/5 group-hover:bg-transparent transition-colors duration-500" />
+                                </div>
+
                                 {/* Core Info */}
                                 <div className="space-y-4 mb-8">
                                     <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
@@ -101,7 +114,7 @@ const ResearchDevelopment = () => {
                                         </span>
                                         <ul className="space-y-3">
                                             {item.applications.map((app, i) => (
-                                                <li key={i} className="flex items-start gap-3 text-[12px] font-bold text-slate-700 leading-tight">
+                                                <li key={i} className="flex items-start gap-3 text-[13px] font-bold text-slate-700 leading-tight">
                                                     <CheckCircle2 size={14} className="text-blue-600 shrink-0 mt-0.5" />
                                                     {app}
                                                 </li>

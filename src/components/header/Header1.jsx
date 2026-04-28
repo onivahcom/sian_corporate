@@ -22,8 +22,8 @@ const Header1 = () => {
     return (
         <>
             {/* Main Nav */}
-            <nav className="border-b border-gray-100 sticky top-0 bg-white z-50">
-                <div className="max-w-[1280px] mx-auto px-6 h-16 flex items-center justify-between">
+            <nav className="border-b border-gray-100 sticky top-0 bg-blue-50 z-50 shadow-sm">
+                <div className="max-w-[1400px] mx-auto px-6 h-16 flex items-center justify-between">
                     <div className="flex items-center space-x-15">
                         <NavLink to="/" className="flex flex-col leading-none group select-none outline-none">
                             {/* Primary Brand - SIAN */}
