@@ -5,7 +5,8 @@ import {
     Mail,
     MapPin,
     ArrowUpRight,
-    ShieldCheck
+    ShieldCheck,
+    Phone
 } from 'lucide-react';
 
 const Footer = () => {
@@ -94,11 +95,11 @@ const Footer = () => {
                         <div className="space-y-4 text-sm">
                             <a href="mailto:contact@siannextgen.com" className="flex items-center gap-3 hover:text-white transition-colors">
                                 <Mail size={16} className="text-blue-500" />
-                                contact@sian.tech
+                                siannextgen@gmail.com
                             </a>
                             <div className="flex items-start gap-3">
-                                <MapPin size={16} className="text-blue-500 shrink-0" />
-                                <span className="leading-snug">Technical Hub,<br /> Bangalore, India</span>
+                                <Phone size={16} className="text-blue-500 " />
+                                <span >+91 9944266255</span>
                             </div>
                         </div>
 
@@ -114,7 +115,7 @@ const Footer = () => {
                 </div>
 
                 {/* Bottom Utility Bar */}
-                <div className="pt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
+                {/* <div className="pt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
                     <div className="flex flex-col md:flex-row items-center gap-6 text-[11px] font-bold uppercase tracking-widest">
                         <span className="text-slate-500">© {currentYear} Sian Next Gen Technologies</span>
                         <div className="hidden md:block h-4 w-px bg-slate-700"></div>
@@ -126,7 +127,7 @@ const Footer = () => {
                     </div>
 
 
-                </div>
+                </div> */}
             </div>
         </footer>
     );

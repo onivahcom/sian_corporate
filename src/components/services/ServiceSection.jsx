@@ -69,7 +69,6 @@ const ServiceSection = () => {
                                     alt={item.title}
                                     className="w-full h-full object-cover rounded-md"
                                     data-aos='fade-in'
-
                                 />
                                 <div className="absolute inset-0  group-hover:bg-transparent transition-colors duration-300"></div>
                             </div>

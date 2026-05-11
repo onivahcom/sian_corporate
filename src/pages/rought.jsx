@@ -21,12 +21,14 @@ import {
     Menu,
     X,
 } from 'lucide-react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Header1 from '../components/header/Header1';
 import ServiceSection from '../components/services/ServiceSection';
 import Footer from '../components/Footer';
 
 const ZohoProfessional = () => {
+
+    const navigate = useNavigate();
     const services = [
         {
             title: 'Artificial Intelligence',
@@ -137,7 +139,7 @@ const ZohoProfessional = () => {
                                 <p className="text-sm text-gray-500 mb-8">No credit card required. Cancel anytime.</p>
 
                                 <div className="space-y-4">
-                                    <button className="w-full bg-[#0d4ea3] text-white py-4 rounded-[4px] font-bold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-100 flex items-center justify-center gap-2">
+                                    <button onClick={() => navigate('/contact-us')} className="w-full bg-[#0d4ea3] cursor-pointer text-white py-4 rounded-[4px] font-bold hover:bg-blue-900 transition-colors shadow-lg shadow-blue-100 flex items-center justify-center gap-2">
                                         GET STARTED <ChevronRight size={18} />
                                     </button>
                                 </div>
@@ -396,9 +398,9 @@ const ZohoProfessional = () => {
 
                             </div>
 
-                            <p className="mt-4 text-[11px] text-center text-gray-400">
+                            {/* <p className="mt-4 text-[11px] text-center text-gray-400">
                                 By submitting this form, you agree to our <a href="#" className="underline text-blue-600">NDA & Data Privacy Policy</a>.
-                            </p>
+                            </p> */}
                         </div>
 
                     </div>

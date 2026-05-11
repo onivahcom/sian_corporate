@@ -23,10 +23,10 @@ const ApplicationForm = () => {
                     {/* --- LEFT SIDE: THE CONTEXT --- */}
                     <div className="lg:col-span-5 pt-4">
                         <motion.div
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8 }}
-                            viewport={{ once: true }}
+                        // initial={{ opacity: 0, x: -20 }}
+                        // whileInView={{ opacity: 1, x: 0 }}
+                        // transition={{ duration: 0.8 }}
+                        // viewport={{ once: true }}
                         >
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-500/10 border border-blue-100 dark:border-blue-500/20 mb-6">
                                 <Sparkles size={14} className="text-blue-600 dark:text-blue-400" />

@@ -4,10 +4,11 @@ import {
     Menu,
     X,
 } from 'lucide-react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const Header1 = () => {
 
+    const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
 
     const navLinks = [
@@ -61,7 +62,7 @@ const Header1 = () => {
 
                     <div className="flex items-center space-x-4">
                         {/* Desktop CTA */}
-                        <button className="hidden sm:block bg-[#157AFB] text-white px-5 py-2 text-sm font-semibold rounded-[4px] hover:bg-blue-700 transition">
+                        <button className="cursor-pointer hidden sm:block bg-[#157AFB] text-white px-5 py-2 text-sm font-semibold rounded-[4px] hover:bg-blue-700 transition" onClick={() => navigate('/contact-us')}>
                             GET STARTED
                         </button>
 
