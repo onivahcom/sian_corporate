@@ -34,7 +34,7 @@ const ContactUs = () => {
 
             <Header1 />
 
-            <div className='py-10 md:py-1'>
+            <div className='py-10 md:py-1 min-h-screen px-6 md:px-10'>
                 <ApplicationForm />
             </div>
 

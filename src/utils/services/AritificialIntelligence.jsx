@@ -21,14 +21,14 @@ const ArtificialIntelligence = () => {
             title: "Machine Learning Solutions",
             icon: <Cpu className="w-6 h-6 text-blue-600" />,
             description: "We create bespoke machine learning models that transform your data into a strategic asset — designed to perform reliably at scale.",
-            bgImage: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600",
+            bgImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDV8fHNvZnR3YXJlfGVufDB8fDB8fHww",
             applications: ["Demand forecasting and dynamic pricing", "Fraud detection and risk scoring", "Recommendation engines", "Predictive maintenance in industrial systems"]
         },
         {
             title: "Natural Language Processing (NLP)",
             icon: <MessageSquare className="w-6 h-6 text-blue-600" />,
             description: "Language is complex — we make it actionable. Our NLP solutions interpret nuance, context, and intent, enabling sophisticated interfaces and deep text intelligence.",
-            bgImage: "https://images.unsplash.com/photo-1544256718-3bcf237f3974?auto=format&fit=crop&q=80&w=600",
+            bgImage: "https://images.unsplash.com/photo-1549692520-acc6669e2f0c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fHNvZnR3YXJlfGVufDB8fDB8fHww",
             applications: ["Conversational AI and chatbot interfaces", "Automated document analysis", "Sentiment and opinion tracking", "Internal knowledge assistants"]
         },
         {
