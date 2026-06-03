@@ -1,15 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import {
-    ShieldCheck, Mail, Clock, Sparkles, BarChart, Layers, CheckCircle2, ArrowUpRight,
 
-    Terminal,
-    Target,
-    Eye,
-    Fingerprint,
-    Award,
-    TrendingUp,
-} from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
